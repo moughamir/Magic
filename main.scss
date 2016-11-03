@@ -1,0 +1,209 @@
+/**
+
+	TODO:
+	- Slides Container:  w:652xh:640
+	- (Re)Start Button: 155x46
+	- screen toggle: 40x40
+3912
+3840
+ */
+
+.future {
+    display: none;
+}
+
+.past {
+    display: none;
+}
+
+
+/* .step {
+ opacity: 0;
+transition: opacity 100ms;
+}
+.step.active {
+ opacity: 1;
+} */
+
+
+/*=================================
+ =            Variables            =
+ =================================*/
+
+
+/* Imports */
+
+@import "sass/reset";
+@import "sass/animations";
+
+/* Dir */
+
+$img: "../images" !default;
+.hidden{
+	opacity:0;
+}
+/* Container size */
+
+$c-w:652px;
+$c-h:640px;
+
+/*=====  End of Variables  ======*/
+
+
+/* Utils */
+
+.flex-c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #89669b;
+    color: white;
+    padding: 18px 60px;
+    border-radius: 2px;
+    font-size: 22px;
+}
+.fab{
+  border-radius: 50%;
+  margin:0;
+  padding: 20px;
+}
+.material{
+  position:relative;
+  color:white;
+  margin: 20px auto;
+  height:400px;
+  width:500px;
+  background:#f45673;
+  
+}
+
+.ripple{
+  overflow:hidden;
+}
+
+.ripple-effect{
+  position: absolute;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: white;
+
+    
+  animation: ripple-animation 2s;
+}
+
+
+@keyframes ripple-animation {
+    from {
+      transform: scale(1);
+      opacity: 0.4;
+    }
+    to {
+      transform: scale(100);
+      opacity: 0;
+    }
+}
+
+/* End of Utils */
+
+
+/* btns */
+
+.getting {
+/*     width: 155px;
+height: 46px; */
+    background: #4F01AF;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    font-size: 1.22rem;
+}
+
+
+/* End of btns*/
+
+.container {
+    width: $c-w;
+    height: $c-h;
+    background: #B3DEFA;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    box-shadow: 0 0 3px #2E2E2E;
+}
+
+.parallax-tarot {
+    position: absolute;
+    background: url("#{$img}/app.jpg");
+    width: 100%;
+    height: 100%;
+    background: #FF8686;
+}
+
+h1 {
+    color: #AAA439;
+    font-size: 72px;
+}
+
+.slide {
+    width: $c-w;
+    height: $c-h;
+    background: #27586B;
+    position: absolute;
+}
+.utils{
+	z-index: 100;
+}
+#intro{
+	z-index: 99;
+}#voyant{
+	z-index: 98;
+}#pick{
+	z-index: 97;
+}#draw{
+	z-index: 96;
+}#interpret{
+	z-index: 95;
+}#read{
+	z-index: 94;
+}#result{
+	z-index: 93;
+}
+/* Logo */
+
+.st0 {
+    fill: #FF7373;
+    stroke: #FDFEFF;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+}
+
+svg#tarot-title {
+    width: 474px;
+    height: 249px;
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    transform: translate(-50%);
+    & * {
+        fill-opacity: 0;
+        transition: fill-opacity 1s;
+    }
+    &.finished * {
+        fill-opacity: 1;
+        stroke-width: 0 !important;
+    }
+}
