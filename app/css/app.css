@@ -1612,8 +1612,8 @@ button {
 /* End of Utils */
 /* btns */
 .getting {
-  /*     width: 155px;
-  height: 46px; */
+    /*     width: 155px;
+height: 46px; */
   background: #4F01AF;
   color: #fff;
   font-family: 'Roboto', sans-serif;
@@ -1637,11 +1637,42 @@ button {
 
 .parallax-tarot {
   position: absolute;
-  background: url("../images/app.jpg");
-  width: 100%;
-  height: 100%;
-  background: #FF8686; }
+  width: 100% !important;
+  height: 100% !important; }
+  .parallax-tarot:before {
+    content: "";
+    position: absolute;
+    width: 1960px;
+    height: 1282px;
+    background: #FF8686 url(../images/prototype.png) 0px -1px no-repeat; }
+  .parallax-tarot.on:before {
+    -webkit-animation: bgAnimate 1800ms ease;
+            animation: bgAnimate 1800ms ease;
+    -webkit-transform: translate(-655px, 0px);
+        -ms-transform: translate(-655px, 0px);
+            transform: translate(-655px, 0px); }
 
+@-webkit-keyframes bgAnimate {
+  0% {
+    -webkit-transform: scale(1) translate(0px, 0px);
+            transform: scale(1) translate(0px, 0px); }
+  50% {
+    -webkit-transform: scale(0.5) translate(-1600px, -650px);
+            transform: scale(0.5) translate(-1600px, -650px); }
+  100% {
+    -webkit-transform: scale(1) translate(-655px, 0px);
+            transform: scale(1) translate(-655px, 0px); } }
+
+@keyframes bgAnimate {
+  0% {
+    -webkit-transform: scale(1) translate(0px, 0px);
+            transform: scale(1) translate(0px, 0px); }
+  50% {
+    -webkit-transform: scale(0.5) translate(-1600px, -650px);
+            transform: scale(0.5) translate(-1600px, -650px); }
+  100% {
+    -webkit-transform: scale(1) translate(-655px, 0px);
+            transform: scale(1) translate(-655px, 0px); } }
 h1 {
   color: #AAA439;
   font-size: 72px; }
@@ -1649,7 +1680,7 @@ h1 {
 .slide {
   width: 652px;
   height: 640px;
-  background: #27586B;
+  /* background: #27586B; */
   position: absolute; }
 
 .utils {

@@ -39,9 +39,11 @@ transition: opacity 100ms;
 /* Dir */
 
 $img: "../images" !default;
-.hidden{
-	opacity:0;
+.hidden {
+    opacity: 0;
 }
+
+
 /* Container size */
 
 $c-w:652px;
@@ -72,41 +74,39 @@ button {
     border-radius: 2px;
     font-size: 22px;
 }
-.fab{
-  border-radius: 50%;
-  margin:0;
-  padding: 20px;
-}
-.material{
-  position:relative;
-  color:white;
-  margin: 20px auto;
-  height:400px;
-  width:500px;
-  background:#f45673;
-  
+
+.fab {
+    border-radius: 50%;
+    margin: 0;
+    padding: 20px;
 }
 
-.ripple{
-  overflow:hidden;
+.material {
+    position: relative;
+    color: white;
+    margin: 20px auto;
+    height: 400px;
+    width: 500px;
+    background: #f45673;
 }
 
-.ripple-effect{
-  position: absolute;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  background: white;
-
-    
-  animation: ripple-animation 2s;
+.ripple {
+    overflow: hidden;
 }
 
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: white;
+    animation: ripple-animation 2s;
+}
 
 @keyframes ripple-animation {
     from {
-      transform: scale(1);
-      opacity: 0.4;
+        transform: scale(1);
+        opacity: 0.4;
     }
     to {
       transform: scale(100);
@@ -114,13 +114,14 @@ button {
     }
 }
 
+
 /* End of Utils */
 
 
 /* btns */
 
 .getting {
-/*     width: 155px;
+    /*     width: 155px;
 height: 46px; */
     background: #4F01AF;
     color: #fff;
@@ -147,10 +148,32 @@ height: 46px; */
 
 .parallax-tarot {
     position: absolute;
-    background: url("#{$img}/app.jpg");
-    width: 100%;
-    height: 100%;
-    background: #FF8686;
+    width: 100% !important;
+    height: 100% !important;
+    &:before {
+        content: "";
+        position: absolute;
+        width: 1960px;
+        height: 1282px;
+        background: #FF8686 url(../images/prototype.png) 0px -1px no-repeat;
+    }
+     &.on:before {
+    animation: bgAnimate 1800ms ease;
+    transform: translate(-655px, 0px);
+}
+}
+
+
+@keyframes bgAnimate {
+    0% {
+        transform: scale(1) translate(0px, 0px);
+    }
+    50% {
+        transform: scale(0.5) translate(-1600px, -650px);
+    }
+    100% {
+        transform: scale(1) translate(-655px, 0px);
+    }
 }
 
 h1 {
@@ -161,27 +184,43 @@ h1 {
 .slide {
     width: $c-w;
     height: $c-h;
-    background: #27586B;
+    /* background: #27586B; */
     position: absolute;
 }
-.utils{
-	z-index: 100;
+
+.utils {
+    z-index: 100;
 }
-#intro{
-	z-index: 99;
-}#voyant{
-	z-index: 98;
-}#pick{
-	z-index: 97;
-}#draw{
-	z-index: 96;
-}#interpret{
-	z-index: 95;
-}#read{
-	z-index: 94;
-}#result{
-	z-index: 93;
+
+#intro {
+    z-index: 99;
 }
+
+#voyant {
+    z-index: 98;
+}
+
+#pick {
+    z-index: 97;
+}
+
+#draw {
+    z-index: 96;
+}
+
+#interpret {
+    z-index: 95;
+}
+
+#read {
+    z-index: 94;
+}
+
+#result {
+    z-index: 93;
+}
+
+
 /* Logo */
 
 .st0 {
