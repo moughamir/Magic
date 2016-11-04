@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="./libs/php_crud_api_transform.js"></script>
+    <script>
+    var app = angular.module('myApplication', []);
+    app.controller('postController', function($scope, $http) {
+        var url = './api.php/tarot';
+
+            $http.get(url).success(function(response) {
+                $scope.tarot = php_crud_api_transform(response).tarot;
+            });
+    });
+    </script>
+</head>
+
+<body>
+    <div ng-app="myApplication" ng-controller="postController">
+        <ul>
+            <li ng-repeat="card in tarot"><img class="card" src="app/images/cards/{{card.value}}.png" alt="card.name"></li>
+        </ul>
+    </div>
+</body>
+
+</html>

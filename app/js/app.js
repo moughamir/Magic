@@ -29,7 +29,7 @@ $(document).ready(function() {
     });
 
     /*=====  End of Variables settings  ======*/
-   $(".on").animate([
+    $(".on").animate([
         { transform: 'translate(0, 0, 0)' },
         { transform: 'translate(0, -300px, 0)' }
     ], {
@@ -37,3 +37,34 @@ $(document).ready(function() {
         iterations: Infinity
     })
 });
+
+
+/* Cards fetcher*/
+
+//var app = angular.module('myApplication', ['ngSanitize'])
+//app.controller('postController', function($scope, $http, $sce) {
+//var url = './api.php/tarot';
+
+//$http.get(url).success(function(response) {
+//    $scope.tarot = php_crud_api_transform(response).tarot;
+//});
+//});
+/* End of Card Fetcher*/
+//app.filter('unsafe', function($sce) {
+//    return function(val) {
+//        return $sce.trustAsHtml(val);
+//    };
+//});
+
+var app = angular.module('myApplication', ['ngSanitize'])
+    .controller('postController', ['$scope', '$http', '$sce',
+        function postController($scope, $http, $sce) {
+            
+            var url = './api.php/tarot';
+
+            $http.get(url).success(function(response) {
+                $scope.tarot = php_crud_api_transform(response).tarot
+            });
+            $scope.explicitlyTrustedHtml = $sce.trustAsHtml();
+        }
+    ]);

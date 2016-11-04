@@ -80,7 +80,13 @@
                     <h1>BBB</h1>
                 </div>
                 <div id="pick" class="hidden slide step" data-x="-328" data-y="-321">
-                    <h1>CCC</h1>
+                    <div ng-app="myApplication" ng-controller="postController as tarot">
+                        <ul>
+                            <li class="card" ng-repeat="card in tarot"><img class="card" src="app/images/cards/{{card.value}}.png" alt="card.name">
+                                <!-- <article ng-bind-html="card.reading"></article> -->
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div id="draw" class="hidden slide step" data-x="3500" data-y="2100" data-rotate="180" data-scale="6">
                     <h1>DDD</h1>
@@ -102,10 +108,13 @@
         </div>
     </section>
     <!-- Scripts Area -->
-    <!--  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <!--  
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
     <script src="https://cdn.jsdelivr.net/vivus/latest/vivus.min.js"></script>
+    <script src="./libs/php_crud_api_transform.js"></script>
     <script src="app/js/app.js"></script>
     <script>
     /* Vivus fx*/
@@ -210,12 +219,12 @@
     // create an observer instance
     var observer = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
-        	var attriName = mutation.attributeName;
-    	if (attriName === "class") {
-    		var attributeValue = $(mutation.target).prop(attriName);
-            console.log(attriName, "changed to:", attributeValue);
-            $(".parallax-tarot").toggleClass('on');
-    	}
+            var attriName = mutation.attributeName;
+            if (attriName === "class") {
+                var attributeValue = $(mutation.target).prop(attriName);
+                console.log(attriName, "changed to:", attributeValue);
+                $(".parallax-tarot").toggleClass('on');
+            }
         });
     });
 
