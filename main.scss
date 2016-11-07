@@ -109,8 +109,8 @@ button {
         opacity: 0.4;
     }
     to {
-      transform: scale(100);
-      opacity: 0;
+        transform: scale(100);
+        opacity: 0;
     }
 }
 
@@ -157,12 +157,11 @@ height: 46px; */
         height: 1282px;
         background: #FF8686 url(../images/prototype.png) 0px -1px no-repeat;
     }
-     &.on:before {
-    animation: bgAnimate 1800ms ease;
-    transform: translate(-655px, 0px);
+    &.on:before {
+        animation: bgAnimate 1800ms ease;
+        transform: translate(-655px, 0px);
+    }
 }
-}
-
 
 @keyframes bgAnimate {
     0% {
@@ -247,11 +246,68 @@ svg#tarot-title {
     }
 }
 
+
 /**/
 
-img.card {
-    width: 70px;
-}/* li.card.ng-scope {
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px;
+    position: absolute;
+    padding: 5px;
+    left: 50%;
+    transform: translate(-51%, -39%);
+    top: 50%;
+    overflow: hidden;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 0 3px 0px #3c3c3c;
+    overflow: hidden;
+    width: 612px;
+    height: 345px;
+    border: 1px solid rgb(214, 214, 214);
+    
+    @for $i from 1 through 22 {
+    	&:nth-child(#{$i}n) {
+    		z-index: 100 - $i;
+    	}
+    }
+}
+
+.card-front {
+    width: 120px;
     display: inline-block;
-    margin: -25px;
-} */
+    border: 2px solid #fff;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.cardReading {
+    width: 460px;
+    background: #fff;
+    padding: 5px 10px 5px 0px;
+}
+
+
+/* .generateCard (@n, @i: 1) when ( @i =< @n){
+  $deg : 45deg;
+  $delta_deg : @deg * 2 / @n;
+  
+  &:nth-child(@{i}){
+   left: 30px * @i;
+   transform: rotate(-@deg + (@i * @delta_deg));
+   .getTop(@i,@n);
+   &:hover{
+      transform: rotate(-@deg + (@i * @delta_deg)) translate(0, -20px);
+   }
+  }
+  .generateCard(@n, (@i + 1)); 
+}
+ */
+
+///* @mixin generateCard($i) {
+//	@for $i from 1 through 3 {
+//  .item-#{$i} { width: 2em * $i; }
+//}
+//}
+// */

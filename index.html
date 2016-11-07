@@ -20,7 +20,7 @@
             </audio>
             <article class="parallax-tarot" id="impress">
                 <!-- <img src="app/images/prototype.png" alt=""> -->
-                <div id="intro" class="slide step" data-x="328" data-y="321" data-z="500">
+                <section id="intro" class="slide step" data-x="328" data-y="321" data-z="500">
                     <!-- Logo Here -->
                     <svg id="tarot-title">
                         <g>
@@ -48,31 +48,31 @@
                         </g>
                     </svg>
                     <button id="getStart" class="btn getting flex-c ripple"><i class="fa fa-rocket fa-2x btn-icon" aria-hidden="true"></i><span class="btn-text">Découvrir</span></button>
-                </div>
-                <div id="voyant" class="hidden slide step" data-x="0">
+                </section>
+                <section id="voyant" class="hidden slide step" data-x="0">
                     <h1>BBB</h1>
-                </div>
-                <div id="pick" class="hidden slide step" data-x="-328" data-y="-321">
+                </section>
+                <section id="pick" class="hidden slide step" data-x="-328" data-y="-321">
                     <div ng-app="myApplication" ng-controller="postController as tarot">
                         <ul>
-                            <li class="card" ng-repeat="card in tarot"><img class="card" src="app/images/cards/{{card.value}}.png" alt="card.name">
-                                <!-- <article ng-bind-html="card.reading"></article> -->
+                            <li class="card" ng-repeat="card in tarot"><img class="card-front" ng-src="app/images/major/{{card.value}}.jpg" alt="card.name">
+                               <article class="cardReading" ng-bind-html="card.reading"></article>	
                             </li>
                         </ul>
                     </div>
-                </div>
-                <div id="draw" class="hidden slide step" data-x="3500" data-y="2100" data-rotate="180" data-scale="6">
+                </section>
+                <section id="draw" class="hidden slide step" data-x="3500" data-y="2100" data-rotate="180" data-scale="6">
                     <h1>DDD</h1>
-                </div>
-                <div id="interpret" class="hidden slide step" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
+                </section>
+                <section id="interpret" class="hidden slide step" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
                     <h1>EEE</h1>
-                </div>
-                <div id="read" class="hidden slide step" data-x="6700" data-y="-300" data-scale="6">
+                </section>
+                <section id="read" class="hidden slide step" data-x="6700" data-y="-300" data-scale="6">
                     <h1>FFF</h1>
-                </div>
-                <div id="result" class="hidden slide step" data-x="6300" data-y="2000" data-rotate="20" data-scale="4">
+                </section>
+                <section id="result" class="hidden slide step" data-x="6300" data-y="2000" data-rotate="20" data-scale="4">
                     <h1>GGG</h1>
-                </div>
+                </section>
             </article>
             <aside class="utils">
                 <div class="btn fullscreen"></div>
