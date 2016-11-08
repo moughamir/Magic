@@ -54,6 +54,14 @@ $c-h:640px;
 
 /* Utils */
 
+section.col-md-8 {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .flex-c {
     display: flex;
     justify-content: center;
@@ -64,6 +72,17 @@ a {
     text-decoration: none;
 }
 
+//* .cardC {
+//    transform: translate(35%, 85%) rotate(45deg);
+//    display: inline-block;
+//   position: absolute;
+//    @for $i from 1 through 22 {
+//       &:nth-child(#{$i}n) {
+//          z-index: 100 - $i;
+//         transform: translate((35% + ($i*2)), 85%)  rotate(45deg - ($i * ($i/2)));
+//    }
+//    }
+//} */
 button {
     border: none;
     outline: none;
@@ -249,6 +268,57 @@ svg#tarot-title {
 
 /**/
 
+/// Mixin to place items on a circle
+/// @author Hugo Giraudel
+/// @author Ana Tudor
+/// @param {Integer} $item-count - Number of items on the circle
+/// @param {Length} $circle-size - Large circle size
+/// @param {Length} $item-size - Single item size
+@mixin on-arc($item-count, $circle-size, $item-size) {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    list-style: none;
+    top: 50%;
+    transform: translate(-50%, -25%);
+    left: 40%;
+    > * {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        $angle: (120 / $item-count);
+        $rot: 32;
+        @for $i from 1 through $item-count {
+            &:nth-of-type(#{$i}) {
+                /* transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg); */
+                z-index: 100 - $i;
+                left: 10px - ($i * 25) !important;
+            }
+            $rot: $rot + $angle;
+        }
+    }
+}
+
+.circle-container {
+    @include on-arc($item-count: 22, $circle-size: 600px, $item-size: 50%);
+    .cardC {
+        display: block;
+        max-width: 100%;
+        margin: -15px;
+        border-radius: 5px;
+        filter: grayscale(100%);
+        transition: .15s;
+        overflow: hidden;
+        &:hover,
+        &:active {
+            filter: grayscale(0);
+            cursor: pointer;
+            top: 280px;
+        }
+    }
+}
+
 .card {
     display: flex;
     justify-content: center;
@@ -256,26 +326,24 @@ svg#tarot-title {
     margin: 8px;
     position: absolute;
     padding: 5px;
-    left: 50%;
-    transform: translate(-51%, -39%);
-    top: 50%;
     overflow: hidden;
     background: rgb(255, 255, 255);
-    box-shadow: 0 0 3px 0px #3c3c3c;
+    box-shadow: 0 0 5px #3c3c3c;
     overflow: hidden;
     width: 612px;
     height: 345px;
     border: 1px solid rgb(214, 214, 214);
-    
+    border-radius: 3px;
     @for $i from 1 through 22 {
-    	&:nth-child(#{$i}n) {
-    		z-index: 100 - $i;
-    	}
+        &:nth-child(#{$i}n) {
+            z-index: 100 - $i;
+            /* display: none; */
+        }
     }
 }
 
 .card-front {
-    width: 120px;
+    width: 99px;
     display: inline-block;
     border: 2px solid #fff;
     border-radius: 5px;
@@ -311,3 +379,255 @@ svg#tarot-title {
 //}
 //}
 // */
+
+
+
+// Modal
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+$oxy: 'Oxygen',sans-serif;
+$opensans: 'Open Sans',sans-serif;
+$meri:'Merienda One', cursive;
+.container {
+    position: relative;
+    width: 652px;
+    height: 640px;
+}
+.hidden{
+    display: none !important;
+}
+.modalo {
+    position: absolute;
+    width: 90%;
+    height: 85%;
+    background-color: #2E2A2A;
+    font-family: $oxy;
+    font-weight: 300;
+    border-radius: 4px;
+    margin: 10% 5% 5%;
+    padding: 10% 2% 2% 2%;
+    color: #F5F5F5;
+    .voyant {
+        border-radius: 50%;
+        width: 145px;
+        height: 145px;
+        border: 4px solid #fff;
+        overflow: hidden;
+        position: relative;
+        margin: -145px auto 20px;
+        img {
+            width: 150px;
+        }
+    }
+    &-content {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 480px;
+        .stack {
+            display: flex;
+            position: absolute;
+            width: 90%;
+            flex-direction: column;
+            align-items: center;
+            .sub-art{
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+$text-color: #9B9B9B;
+$text-color-f: #F0F0F0;
+$bordercolor: #4A4A4A;
+$bordercolor-f: #FF8080;
+$input-w: 360px;
+$input-w-f: $input-w + 100;
+img.icon {
+    width: 17px;
+    margin-right: 7px;
+}
+
+.btn {
+    display: block;
+    letter-spacing: 4px;
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    background-color: #2aa1c0;
+    border: none;
+    height: 62px;
+    border-bottom: 2px solid #4A4A4A;
+    width: $input-w;
+}
+
+.con {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 15px;
+    padding-top: 20px;
+    &-form {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+// Form
+.label {
+    display: block;
+    letter-spacing: 3px;
+    padding-top: 3px;
+    text-align: center;
+    &-text {
+        color: $text-color;
+        cursor: text;
+        font-size: 16px;
+        line-height: 20px;
+        text-transform: uppercase;
+        transform: translateY(-34px);
+        transition: all 0.3s;
+    }
+    input {
+        background-color: transparent;
+        border: 0;
+        border-bottom: 2px solid $bordercolor;
+        color: white;
+        font-size: 36px;
+        letter-spacing: -1px;
+        outline: 0;
+        padding: 5px 20px;
+        text-align: center;
+        transition: all 0.3s;
+        width: $input-w;
+        &:focus {
+            width: $input-w-f;
+            border-bottom: 2px solid $bordercolor-f;
+            &::placeholder {
+                opacity: 0.5;
+                transition: all 0.5s;
+            }
+        }
+        &:focus + .label-text {
+            color: $text-color-f;
+            font-size: 13px;
+            transform: translateY(-74px);
+        }
+        &:valid + .label-text {
+            font-size: 13px;
+            transform: translateY(-74px);
+        }
+        &::placeholder {
+            opacity: 0;
+        }
+    }
+}
+
+.checkbox-group {
+    width: 360;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30px;
+}
+
+.control {
+    font-size: 18px;
+    position: relative;
+    display: block;
+    padding-left: 30px;
+    cursor: pointer;
+    & input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+    &__indicator {
+        position: absolute;
+        top: 2px;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background: #e6e6e6;
+    }
+    &--radio &__indicator {
+        border-radius: 50%;
+    }
+    /* Hover and focus states */
+    &:hover input ~ &__indicator,
+    & input:focus ~ &__indicator {
+        background: #ccc;
+    }
+    /* Checked state */
+    & input:checked ~ &__indicator {
+        background: #2aa1c0;
+    }
+    /* Hover state whilst checked */
+    &:hover input:not([disabled]):checked ~ &__indicator,
+    & input:checked:focus ~ &__indicator {
+        background: #0e647d;
+    }
+    /* Disabled state */
+    .control input:disabled ~ .control__indicator {
+        pointer-events: none;
+        opacity: .6;
+        background: #e6e6e6;
+    }
+    /* Check mark */
+    &__indicator:after {
+        position: absolute;
+        display: none;
+        content: '';
+    }
+    /* Show check mark */
+    & input:checked ~ &__indicator:after {
+        display: block;
+    }
+    /* Checkbox tick */
+    .control--checkbox .control__indicator:after {
+        top: 4px;
+        left: 8px;
+        width: 3px;
+        height: 8px;
+        transform: rotate(45deg);
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+    }
+    /* Disabled tick colour */
+    &--checkbox input:disabled ~ &__indicator:after {
+        border-color: #7b7b7b;
+    }
+    /* Radio button inner circle */
+    &--radio &__indicator:after {
+        top: 7px;
+        left: 7px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #fff;
+    }
+    /* Disabled circle colour */
+    &--radio input:disabled ~ &__indicator:after {
+        background: #7b7b7b;
+    }
+}
+
+// END OF FORM
+.thanks{
+    .sayThanks {
+    font-family: $meri;
+    font-size: 3em;
+    text-shadow: 1px 1px black;
+}
+    p{
+    font-family: $opensans;
+    font-size: 2em;
+}
+}

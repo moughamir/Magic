@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="app/css/app.css">
+<style>
+
+.droped {
+    color: #000;
+    border: 10px dashed #123456;
+    width: 500px;
+    min-height: 300px;
+}
+</style>
+<section >
+    <div ng-app="myApplication" ng-controller="postController as tarot" class="flex-c">
+        <div class="droped"></div>
+        <ul class="circle-container">
+            <li class="cardC" ng-repeat="card in tarot" ng-click="saySomething"><img class="card-front" ng-src="app/images/major/{{card.value}}.jpg" alt="card.name">
+                <!-- <article class="cardReading" ng-bind-html="card.reading"></article>	 -->
+            </li>
+            <!-- <li class="cardC" ng-repeat="card in tarot"><img class="card-front" ng-src="app/images/major/{{card.value}}.jpg" alt="card.name"> -->
+        </ul>
+    </div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
+<script src="./libs/php_crud_api_transform.js"></script>
+<script src="app/js/app.js"></script>
+<script>
+document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
+</script>

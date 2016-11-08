@@ -10,6 +10,7 @@
  * @since 0.1.0
  */
 $(document).ready(function() {
+
     /*==========================================
     =            Variables settings            =
     ==========================================*/
@@ -36,6 +37,7 @@ $(document).ready(function() {
         duration: 1000,
         iterations: Infinity
     })
+
 });
 
 
@@ -59,12 +61,17 @@ $(document).ready(function() {
 var app = angular.module('myApplication', ['ngSanitize'])
     .controller('postController', ['$scope', '$http', '$sce',
         function postController($scope, $http, $sce) {
-            
+
             var url = './api.php/tarot';
 
             $http.get(url).success(function(response) {
                 $scope.tarot = php_crud_api_transform(response).tarot
             });
             $scope.explicitlyTrustedHtml = $sce.trustAsHtml();
+            $scope.saySomething = function() {
+                    console.log('click click');
+                }
         }
     ]);
+
+//
