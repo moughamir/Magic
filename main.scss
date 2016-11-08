@@ -31,11 +31,6 @@ transition: opacity 100ms;
  =================================*/
 
 
-/* Imports */
-
-@import "sass/reset";
-@import "sass/animations";
-@import "sass/butterfly";
 /* Dir */
 
 $img: "../images" !default;
@@ -49,6 +44,11 @@ $img: "../images" !default;
 $c-w:652px;
 $c-h:640px;
 
+/* Imports */
+
+@import "sass/reset";
+@import "sass/animations";
+@import "sass/butterfly";
 /*=====  End of Variables  ======*/
 
 
@@ -139,9 +139,9 @@ button {
 
 /* btns */
 
-.getting {
-    /*     width: 155px;
-height: 46px; */
+/* .getting {
+    width: 155px;
+height: 46px;
     background: #4F01AF;
     color: #fff;
     font-family: 'Roboto', sans-serif;
@@ -151,7 +151,7 @@ height: 46px; */
     transform: translate(-50%, -80%);
     font-size: 1.22rem;
 }
-
+ */
 
 /* End of btns*/
 

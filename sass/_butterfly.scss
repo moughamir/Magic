@@ -43,7 +43,7 @@ left: 200px;
 top: 0px;
 width: 200px;
 height: 238px;
-background: url($img/butterfly.png) no-repeat;
+background: url(#{$img}/butterfly.png) no-repeat;
 animation: 0.7s ease-in 3s 7 reverse both rightwingani;
 /*
   animation-duration: 0.6s;
