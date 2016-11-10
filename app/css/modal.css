@@ -1,0 +1,298 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+.container {
+  position: relative;
+  width: 652px;
+  height: 640px; }
+
+.hidden {
+  display: none !important; }
+
+.modalo {
+  position: absolute;
+  width: 90%;
+  height: 85%;
+  background-color: #2E2A2A;
+  font-family: "Oxygen", sans-serif;
+  font-weight: 300;
+  border-radius: 4px;
+  margin: 10% 5% 5%;
+  padding: 10% 2% 2% 2%;
+  color: #F5F5F5; }
+  .modalo .voyant {
+    border-radius: 50%;
+    width: 145px;
+    height: 145px;
+    border: 4px solid #fff;
+    overflow: hidden;
+    position: relative;
+    margin: -145px auto 20px; }
+    .modalo .voyant img {
+      width: 150px; }
+  .modalo-content {
+    margin: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    height: 480px; }
+    .modalo-content .stack {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      position: absolute;
+      width: 90%;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      .modalo-content .stack .sub-art {
+        margin-bottom: 30px; }
+
+.md-close {
+  position: absolute;
+  top: -32px;
+  width: 28px;
+  height: 28px;
+  padding: 1px;
+  right: 0;
+  font-size: 16px; }
+
+img.icon {
+  width: 17px;
+  margin-right: 7px; }
+
+.btn {
+  display: block;
+  letter-spacing: 4px;
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  background-color: #2aa1c0;
+  border: none;
+  height: 62px;
+  border-bottom: 2px solid #4A4A4A;
+  width: 360px; }
+
+.con {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 15px;
+  padding-top: 20px; }
+  .con-form {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+
+.label {
+  display: block;
+  letter-spacing: 3px;
+  padding-top: 3px;
+  text-align: center; }
+  .label-text {
+    color: #9B9B9B;
+    cursor: text;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+    -webkit-transform: translateY(-34px);
+        -ms-transform: translateY(-34px);
+            transform: translateY(-34px);
+    -webkit-transition: all 0.3s;
+            transition: all 0.3s; }
+  .label input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid #4A4A4A;
+    color: white;
+    font-size: 36px;
+    letter-spacing: -1px;
+    outline: 0;
+    padding: 5px 20px;
+    text-align: center;
+    -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+    width: 360px; }
+    .label input:focus {
+      width: 460px;
+      border-bottom: 2px solid #FF8080; }
+      .label input:focus::-webkit-input-placeholder {
+        opacity: 0.5;
+        -webkit-transition: all 0.5s;
+                transition: all 0.5s; }
+      .label input:focus::-moz-placeholder {
+        opacity: 0.5;
+        transition: all 0.5s; }
+      .label input:focus:-ms-input-placeholder {
+        opacity: 0.5;
+        transition: all 0.5s; }
+      .label input:focus::placeholder {
+        opacity: 0.5;
+        -webkit-transition: all 0.5s;
+                transition: all 0.5s; }
+    .label input:focus + .label-text {
+      color: #F0F0F0;
+      font-size: 13px;
+      -webkit-transform: translateY(-74px);
+          -ms-transform: translateY(-74px);
+              transform: translateY(-74px); }
+    .label input:valid + .label-text {
+      font-size: 13px;
+      -webkit-transform: translateY(-74px);
+          -ms-transform: translateY(-74px);
+              transform: translateY(-74px); }
+    .label input::-webkit-input-placeholder {
+      opacity: 0; }
+    .label input::-moz-placeholder {
+      opacity: 0; }
+    .label input:-ms-input-placeholder {
+      opacity: 0; }
+    .label input::placeholder {
+      opacity: 0; }
+
+.checkbox-group {
+  width: 360;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 30px; }
+
+.control {
+  font-size: 18px;
+  position: relative;
+  display: block;
+  padding-left: 30px;
+  cursor: pointer
+  /* Hover and focus states */
+  /* Checked state */
+  /* Hover state whilst checked */
+  /* Disabled state */
+  /* Check mark */
+  /* Show check mark */
+  /* Checkbox tick */
+  /* Disabled tick colour */
+  /* Radio button inner circle */
+  /* Disabled circle colour */ }
+  .control input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0; }
+  .control__indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: #e6e6e6; }
+  .control--radio .control__indicator {
+    border-radius: 50%; }
+  .control:hover input ~ .control__indicator, .control input:focus ~ .control__indicator {
+    background: #ccc; }
+  .control input:checked ~ .control__indicator {
+    background: #2aa1c0; }
+  .control:hover input:not([disabled]):checked ~ .control__indicator, .control input:checked:focus ~ .control__indicator {
+    background: #0e647d; }
+  .control .control input:disabled ~ .control__indicator {
+    pointer-events: none;
+    opacity: .6;
+    background: #e6e6e6; }
+  .control__indicator:after {
+    position: absolute;
+    display: none;
+    content: ''; }
+  .control input:checked ~ .control__indicator:after {
+    display: block; }
+  .control .control--checkbox .control__indicator:after {
+    top: 4px;
+    left: 8px;
+    width: 3px;
+    height: 8px;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    border: solid #fff;
+    border-width: 0 2px 2px 0; }
+  .control--checkbox input:disabled ~ .control__indicator:after {
+    border-color: #7b7b7b; }
+  .control--radio .control__indicator:after {
+    top: 7px;
+    left: 7px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fff; }
+  .control--radio input:disabled ~ .control__indicator:after {
+    background: #7b7b7b; }
+
+.thanks .sayThanks {
+  font-family: "Merienda One", cursive;
+  font-size: 3em;
+  text-shadow: 1px 1px black; }
+.thanks p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2em; }
+
+.modalo ~ .md-overlay {
+  background: rgba(180, 46, 32, 0.5); }
+
+.modalo ~ .container {
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  filter: blur(3px); }
+
+.modalo .md-content {
+  -webkit-transform: translateY(-5%);
+  -ms-transform: translateY(-5%);
+  transform: translateY(-5%);
+  opacity: 0; }
+
+.modalo ~ .container,
+.modalo .md-content {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s; }
+
+.modalo .md-content {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1; }
+
+/*# sourceMappingURL=modal.css.map */
