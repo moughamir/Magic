@@ -169,17 +169,8 @@ height: 46px;
     position: absolute;
     width: 100% !important;
     height: 100% !important;
-    &:before {
-        content: "";
-        position: absolute;
-        width: 1960px;
-        height: 1282px;
-        background: #FF8686 url(../images/prototype.png) 0px -1px no-repeat;
-    }
-    &.on:before {
-        animation: bgAnimate 1800ms ease;
-        transform: translate(-655px, 0px);
-    }
+  background: #FF8686 url(../images/prototype.png) 0px -1px no-repeat;
+  animation: bgAnimate 1800ms ease;
 }
 
 @keyframes bgAnimate {
@@ -329,7 +320,6 @@ svg#tarot-title {
     overflow: hidden;
     background: rgb(255, 255, 255);
     box-shadow: 0 0 5px #3c3c3c;
-    overflow: hidden;
     width: 612px;
     height: 345px;
     border: 1px solid rgb(214, 214, 214);
@@ -353,7 +343,7 @@ svg#tarot-title {
 .cardReading {
     width: 460px;
     background: #fff;
-    padding: 5px 10px 5px 0px;
+  padding: 5px 10px 5px 0;
 }
 
 
@@ -469,6 +459,10 @@ img.icon {
     height: 62px;
     border-bottom: 2px solid #4A4A4A;
     width: $input-w;
+  position: absolute;
+  top: 458px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .con {
@@ -534,7 +528,7 @@ img.icon {
 }
 
 .checkbox-group {
-    width: 360;
+  width: 360px;
     display: flex;
     justify-content: space-around;
     align-items: center;

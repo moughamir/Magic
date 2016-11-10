@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--suppress ALL -->
 <html lang="en">
 
 <head>
@@ -142,170 +143,197 @@
         </div>
     </section>
     <!-- Scripts Area -->
-    <!--  
+    <!--
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.min.js"></script>
     <script src="https://cdn.jsdelivr.net/vivus/latest/vivus.min.js"></script>
     <script src="./libs/php_crud_api_transform.js"></script>
     <script src="app/js/app.js"></script>
+    <script src="app/js/jquery.backgroundpos.js "></script>
     <script>
-    /* Vivus fx*/
-    new Vivus('tarot-title', {
-        type: 'async',
-        duration: 100,
-        animTimingFunction: Vivus.EASE
-    }, function(obj) {
-        obj.el.classList.add('finished');
-    });
-    /*Ripple*/
-    (function(window, $) {
+        /* Vivus fx*/
+        new Vivus('tarot-title', {
+            type: 'async',
+            duration: 100,
+            animTimingFunction: Vivus.EASE
+        }, function (obj) {
+            obj.el.classList.add('finished');
+        });
+        /*Ripple*/
+        (function (window, $) {
 
-        $(function() {
-
-
-            $('.ripple').on('click', function(event) {
-                event.preventDefault();
-
-                var $div = $('<div/>'),
-                    btnOffset = $(this).offset(),
-                    xPos = event.pageX - btnOffset.left,
-                    yPos = event.pageY - btnOffset.top;
+            $(function () {
 
 
+                $('.ripple').on('click', function (event) {
+                    event.preventDefault();
 
-                $div.addClass('ripple-effect');
-                var $ripple = $(".ripple-effect");
-
-
-
-                var $div = $('<div/>'),
-                    btnOffset = $(this).offset(),
-                    xPos = event.pageX - btnOffset.left,
-                    yPos = event.pageY - btnOffset.top;
+                    var $div = $('<div/>'),
+                            btnOffset = $(this).offset(),
+                            xPos = event.pageX - btnOffset.left,
+                            yPos = event.pageY - btnOffset.top;
 
 
+                    $div.addClass('ripple-effect');
+                    var $ripple = $(".ripple-effect");
 
-                $div.addClass('ripple-effect');
-                var $ripple = $(".ripple-effect");
 
-                $ripple.css("height", $(this).height());
-                $ripple.css("width", $(this).height());
-                $div
-                    .css({
-                        top: yPos - ($ripple.height() / 2),
-                        left: xPos - ($ripple.width() / 2),
-                        background: $(this).data("ripple-color")
-                    })
-                    .appendTo($(this));
+                    var $div = $('<div/>'),
+                            btnOffset = $(this).offset(),
+                            xPos = event.pageX - btnOffset.left,
+                            yPos = event.pageY - btnOffset.top;
 
-                window.setTimeout(function() {
-                    $div.remove();
-                }, 2000);
+
+                    $div.addClass('ripple-effect');
+                    var $ripple = $(".ripple-effect");
+
+                    $ripple.css("height", $(this).height());
+                    $ripple.css("width", $(this).height());
+                    $div
+                            .css({
+                                top: yPos - ($ripple.height() / 2),
+                                left: xPos - ($ripple.width() / 2),
+                                background: $(this).data("ripple-color")
+                            })
+                            .appendTo($(this));
+
+                    window.setTimeout(function () {
+                        $div.remove();
+                    }, 2000);
+                });
+
             });
 
-        });
-
-    })(window, jQuery);
-    /*
-    Animations Trigger
-    */
-    $('.btn').click(function() {
+        })(window, jQuery);
+        /*
+         Animations Trigger
+         */
+        $('.
+        btn
+        ').click(function () {
         $('#intro').addClass('rotateCarouselLeftOut');
         $('#voyant').removeClass('hidden').addClass('rotateCarouselLeftIn');
         console.info('Switching scene (1->2)');
-    });
-    $('#voyant').click(
-        function() {
-            $('#voyant').removeClass('rotateCarouselLeftIn').addClass('rotateSlideOut');
-            $('#pick').removeClass('hidden').addClass('rotateSlideIn');
-        }
-    );
-    $('#pick').click(
-        function() {
-            $('#pick').removeClass('rotateSlideIn').addClass('moveToBottomFade');
-            $('#draw').removeClass('hidden').addClass('moveFromTopFade');
-        }
-    );
-    $('#draw').click(
-        function() {
-            $('#draw').removeClass('rotateSlideIn').addClass('moveToBottomFade');
-            $('#interpret').removeClass('hidden').addClass('moveFromTopFade');
-        }
-    );
-
-    /* Parallax Bg*/
-    /*$(document).ready(function() {
-    var movementStrength = 125;
-    var height = movementStrength / $(window).height();
-    var width = movementStrength / $(window).width();
-    $(".parallax-tarot").mousemove(function(e){
-              var pageX = e.pageX - ($(window).width() / 2);
-              var pageY = e.pageY - ($(window).height() / 2);
-              var newvalueX = width * pageX * -1 - 25;
-              var newvalueY = height * pageY * -1 - 50;
-              $('.parallax-tarot').css("background-position", newvalueX+"px     "+newvalueY+"px");
-    });
-    });*/
-
-
-    /*var $div = $("#voyant");
-    var observer = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
-            if (mutation.attributeName === "class") {
-                var attributeValue = $(mutation.target).prop(mutation.attributeName);
-                console.log("Class attribute changed to:", attributeValue);
-            }
+        $('.parallax-tarot').animate({backgroundPosition: '-651px 0px'}, 700, 'swing');
         });
-    });    
-    observer.observe($div[0],  {
-        attributes: true
-    });
-    */
-    // create an observer instance
-    var observer = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
-            var attriName = mutation.attributeName;
-            if (attriName === "class") {
-                var attributeValue = $(mutation.target).prop(attriName);
-                console.log(attriName, "changed to:", attributeValue);
-                $(".parallax-tarot").toggleClass('on');
-            }
+        $('#voyant').click(function () {
+                    $('
+                    #voyant
+                    ').removeClass('
+                    rotateCarouselLeftIn
+                    ').addClass('
+                    rotateSlideOut
+                    ');
+                    $('#pick').removeClass('hidden').addClass('rotateSlideIn');
+                    $('.parallax-tarot').animate({backgroundPosition: '-1307px 0px'}, 700, 'swing');
+                }
+        );
+        $('#pick').click(function () {
+                    $('
+                    #pick
+                    ').removeClass('
+                    rotateSlideIn
+                    ').addClass('
+                    moveToBottomFade
+                    ');
+                    $('#draw').removeClass('hidden').addClass('moveFromTopFade');
+                    $('.parallax-tarot').animate({backgroundPosition: '-1307px -641px'}, 700, 'swing');
+                }
+        );
+        $('#draw').click(
+                function () {
+                    $('#draw').removeClass('rotateSlideIn').addClass('moveToBottomFade');
+                    $('#interpret').removeClass('hidden').addClass('moveFromTopFade');
+                    $('.parallax-tarot').animate({backgroundPosition: '-655px -641px'}, 700, 'swing');
+                }
+        );
+        $('#interpret').click(
+                function () {
+                    $('#interpret').removeClass('moveFromTopFade').addClass('moveToLeftFade');
+                    $('#read').removeClass('hidden').addClass('moveFromLeftFade');
+                    $('.parallax-tarot').animate({backgroundPosition: '-2px -641px'}, 700, 'swing');
+                }
+        );
+        $('#read').click(
+                function () {
+                    $('#read').removeClass('moveFromLeftFade').addClass('moveToTopFade');
+                    $('#result').removeClass('hidden').addClass('moveFromBottomFade');
+                    $('.parallax-tarot').animate({backgroundPosition: '0 0'}, 700, 'swing');
+                }
+        );
+        /* Parallax Bg*/
+
+
+        /*$(document).ready(function() {
+         var movementStrength = 125;
+         var height = movementStrength / $(window).height();
+         var width = movementStrength / $(window).width();
+         $(".parallax-tarot").mousemove(function(e){
+         var pageX = e.pageX - ($(window).width() / 2);
+         var pageY = e.pageY - ($(window).height() / 2);
+         var newvalueX = width * pageX * -1 - 25;
+         var newvalueY = height * pageY * -1 - 50;
+         $('.parallax-tarot').css("background-position", newvalueX+"px     "+newvalueY+"px");
+         });
+         });*/
+        /*var $div = $("#voyant");
+         var observer = new MutationObserver(function(mutations) {
+         mutations.forEach(function(mutation) {
+         if (mutation.attributeName === "class") {
+         var attributeValue = $(mutation.target).prop(mutation.attributeName);
+         console.log("Class attribute changed to:", attributeValue);
+         }
+         });
+         });
+         observer.observe($div[0],  {
+         attributes: true
+         });
+         */
+        // create an observer instance
+        var observer = new MutationObserver(function (mutations) {
+            mutations.forEach(function (mutation) {
+                var attriName = mutation.attributeName;
+                if (attriName === "class") {
+                    var attributeValue = $(mutation.target).prop(attriName);
+                    console.log(attriName, "changed to:", attributeValue);
+                    $(".parallax-tarot").toggleClass('on');
+                }
+            });
         });
-    });
 
-    // configuration of the observer:
-    var config = {
-        attributes: true,
-    };
+        // configuration of the observer:
+        var config = {
+            attributes: true
+        };
 
-    // pass in the target node, as well as the observer options
+        // pass in the target node, as well as the observer options
 
-    // later, you can stop observing
-    observer.disconnect();
+        // later, you can stop observing
+        observer.disconnect();
 
-    observer.observe($('#intro')[0], config);
-    observer.observe($('#voyant')[0], config);
-    observer.observe($('#pick')[0], config);
-    observer.observe($('#draw')[0], config);
-    observer.observe($('#interpret')[0], config);
-    observer.observe($('#read')[0], config);
-    /*observer.observe($('#resault')[0], config);*/
+        observer.observe($('#intro')[0], config);
+        observer.observe($('#voyant')[0], config);
+        observer.observe($('#pick')[0], config);
+        observer.observe($('#draw')[0], config);
+        observer.observe($('#interpret')[0], config);
+        observer.observe($('#read')[0], config);
+        observer.observe($('#resault')[0], config);
 
 
-    $(document).on('change, click', 'input[name="insc"]', function(e){
-    	setTimeout(function(){
-    		$('.bref').addClass('moveToRight');
-    		console.log('done');
-    		$('.con').removeClass('hidden').addClass('moveFromLeft');
-    	}, 0);
-    });
+        $(document).on('change, click', 'input[name="insc"]', function (e) {
+            setTimeout(function () {
+                $('.bref').addClass('moveToRight');
+                console.log('done');
+                $('.con').removeClass('hidden').addClass('moveFromLeft');
+            }, 0);
+        });
+
+        document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
     </script>
-    <!-- LiveReload -->
-    <script>
-    document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
-    </script>
+
 </body>
 
 </html>
