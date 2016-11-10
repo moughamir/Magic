@@ -67,6 +67,12 @@ section.col-md-8 {
     display: flex;
     justify-content: center;
     align-items: center;
+  align-items: center;
+  &[ng-app="myApplication"] {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
 }
 
 a {
@@ -261,13 +267,11 @@ svg#tarot-title {
 /// @param {Length} $circle-size - Large circle size
 /// @param {Length} $item-size - Single item size
 @mixin on-arc($item-count, $circle-size, $item-size) {
-    position: relative;
+  position: absolute;
     width: 600px;
-    height: 600px;
     list-style: none;
-    top: 50%;
-    transform: translate(-50%, -25%);
-    left: 40%;
+  transform: translate(40%);
+  left: 50%;
     > * {
         display: block;
         position: absolute;
@@ -293,14 +297,14 @@ svg#tarot-title {
         max-width: 100%;
         margin: -15px;
         border-radius: 5px;
-        filter: grayscale(100%);
+      filter: grayscale(80%);
         transition: .15s;
         overflow: hidden;
         &:hover,
         &:active {
             filter: grayscale(0);
             cursor: pointer;
-            top: 280px;
+          top: -20px;
         }
     }
 }
@@ -444,6 +448,8 @@ cursive;
 
 .fullscreen {
   z-index: 9999;
+  letter-spacing: 0 !important;
+  font-size: 16px !important;
   opacity: 1;
   display: block !important;
   position: absolute;
@@ -452,9 +458,17 @@ cursive;
   padding: 0;
   right: 10px;
   top: 10px;
-  background: #15161766 !important;
+  background: rgba(0, 0, 0, 0.30) !important;
   border: 1px solid white !important;
 }
+
+*:fullscreen
+*:-ms-fullscreen,
+*:-webkit-full-screen,
+*:-moz-full-screen {
+  overflow: auto !important;
+}
+
 
 $text-color: #9B9B9B;
 $text-color-f: #F0F0F0;

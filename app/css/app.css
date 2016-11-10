@@ -1708,7 +1708,15 @@ section.col-md-8 {
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
           align-items: center; }
+  .flex-c[ng-app="myApplication"] {
+    width: 100%;
+    height: 100%;
+    position: absolute; }
 
 a {
   text-decoration: none; }
@@ -1878,15 +1886,13 @@ svg#tarot-title {
 
 /**/
 .circle-container {
-  position: relative;
+  position: absolute;
   width: 600px;
-  height: 600px;
   list-style: none;
-  top: 50%;
-  -webkit-transform: translate(-50%, -25%);
-      -ms-transform: translate(-50%, -25%);
-          transform: translate(-50%, -25%);
-  left: 40%; }
+  -webkit-transform: translate(40%);
+      -ms-transform: translate(40%);
+          transform: translate(40%);
+  left: 50%; }
   .circle-container > * {
     display: block;
     position: absolute;
@@ -1985,8 +1991,8 @@ svg#tarot-title {
     max-width: 100%;
     margin: -15px;
     border-radius: 5px;
-    -webkit-filter: grayscale(100%);
-            filter: grayscale(100%);
+    -webkit-filter: grayscale(80%);
+            filter: grayscale(80%);
     -webkit-transition: .15s;
             transition: .15s;
     overflow: hidden; }
@@ -1994,7 +2000,7 @@ svg#tarot-title {
       -webkit-filter: grayscale(0);
               filter: grayscale(0);
       cursor: pointer;
-      top: 280px; }
+      top: -20px; }
 
 .card {
   display: -webkit-box;
@@ -2199,6 +2205,8 @@ svg#tarot-title {
 
 .fullscreen {
   z-index: 9999;
+  letter-spacing: 0 !important;
+  font-size: 16px !important;
   opacity: 1;
   display: block !important;
   position: absolute;
@@ -2207,8 +2215,20 @@ svg#tarot-title {
   padding: 0;
   right: 10px;
   top: 10px;
-  background: #15161766 !important;
+  background: rgba(0, 0, 0, 0.3) !important;
   border: 1px solid white !important; }
+
+*:-ms-fullscreen
+*:-ms-fullscreen,
+*:-webkit-full-screen,
+*:-moz-full-screen {
+  overflow: auto !important; }
+
+*:fullscreen
+*:-ms-fullscreen,
+*:-webkit-full-screen,
+*:-moz-full-screen {
+  overflow: auto !important; }
 
 img.icon {
   width: 17px;
