@@ -55,8 +55,18 @@ $meri:'Merienda One', cursive;
             }
         }
     }
+
 }
 
+.md-close {
+  position: absolute;
+  top: -32px;
+  width: 28px;
+  height: 28px;
+  padding: 1px;
+  right: 0;
+  font-size: 16px;
+}
 $text-color: #9B9B9B;
 $text-color-f: #F0F0F0;
 $bordercolor: #4A4A4A;
@@ -235,7 +245,7 @@ img.icon {
 // END OF FORM
 .thanks{
 	.sayThanks {
-    font-family: $meri
+      font-family: $meri;
     font-size: 3em;
     text-shadow: 1px 1px black;
 }
@@ -243,4 +253,37 @@ img.icon {
     font-family: $opensans;
     font-size: 2em;
 }
+}
+
+.modalo ~ .md-overlay {
+  background: rgba(180, 46, 32, 0.5);
+}
+
+.modalo ~ .container {
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  filter: blur(3px);
+}
+
+.modalo .md-content {
+  -webkit-transform: translateY(-5%);
+  -moz-transform: translateY(-5%);
+  -ms-transform: translateY(-5%);
+  transform: translateY(-5%);
+  opacity: 0;
+}
+
+.modalo ~ .container,
+.modalo .md-content {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.modalo .md-content {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
 }

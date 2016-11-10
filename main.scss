@@ -431,6 +431,30 @@ cursive;
     }
 }
 
+.md-close {
+  position: absolute;
+  top: -32px;
+  width: 28px;
+  height: 28px;
+  padding: 1px;
+  right: 0;
+  font-size: 16px;
+}
+
+.fullscreen {
+  z-index: 9999;
+  opacity: 1;
+  display: block;
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  right: 10px;
+  top: 10px;
+  background: #15161766;
+  border: 1px solid white;
+}
+
 $text-color: #9B9B9B;
 $text-color-f: #F0F0F0;
 $bordercolor: #4A4A4A;
