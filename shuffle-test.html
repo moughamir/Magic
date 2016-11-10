@@ -51,12 +51,12 @@
 
 
         $("#shuffle").click(function() {
-            count = 0
+            count = 0;
             cards = [];
             $("#cards").html("");
 
             for (n in numbers) {
-                var num = numbers[n]
+                var num = numbers[n];
                 var card = {
                     number: num,
                     order: Math.floor(Math.random() * 5200) + 1
@@ -83,7 +83,7 @@
     });
 
     function dispCard(cardNum) {
-        var i = cardNum
+        var i = cardNum;
         var count = cardNum + 1;
         var card = cards[i];
         $("#cards").append("<li class=\"card\"><img src=\"app/images/major/" + card.number + ".jpg\" alt=\"\"></li>");

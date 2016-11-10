@@ -342,8 +342,8 @@
 /* rotate sides first and scale */
 
 .rotateRightSideFirst {
-	-webkit-transform-origin: 0% 50%;
-	transform-origin: 0% 50%;
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
 	-webkit-animation: rotateRightSideFirst .8s both ease-in;
 	animation: rotateRightSideFirst .8s both ease-in;
 }
@@ -360,8 +360,8 @@
 	animation: rotateTopSideFirst .8s both ease-in;
 }
 .rotateBottomSideFirst {
-	-webkit-transform-origin: 50% 0%;
-	transform-origin: 50% 0%;
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
 	-webkit-animation: rotateBottomSideFirst .8s both ease-in;
 	animation: rotateBottomSideFirst .8s both ease-in;
 }
@@ -420,8 +420,8 @@
 /* rotate fall */
 
 .rotateFall {
-	-webkit-transform-origin: 0% 0%;
-	transform-origin: 0% 0%;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
 	-webkit-animation: rotateFall 1s both ease-in;
 	animation: rotateFall 1s both ease-in;
 }
@@ -442,8 +442,8 @@
 
 /* push */
 .rotatePushLeft {
-	-webkit-transform-origin: 0% 50%;
-	transform-origin: 0% 50%;
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
 	-webkit-animation: rotatePushLeft .8s both ease;
 	animation: rotatePushLeft .8s both ease;
 }
@@ -454,8 +454,8 @@
 	animation: rotatePushRight .8s both ease;
 }
 .rotatePushTop {
-	-webkit-transform-origin: 50% 0%;
-	transform-origin: 50% 0%;
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
 	-webkit-animation: rotatePushTop .8s both ease;
 	animation: rotatePushTop .8s both ease;
 }
@@ -474,14 +474,14 @@
 	animation: rotatePullRight .5s both ease;
 }
 .rotatePullLeft {
-	-webkit-transform-origin: 0% 50%;
-	transform-origin: 0% 50%;
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
 	-webkit-animation: rotatePullLeft .5s both ease;
 	animation: rotatePullLeft .5s both ease;
 }
 .rotatePullTop {
-	-webkit-transform-origin: 50% 0%;
-	transform-origin: 50% 0%;
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
 	-webkit-animation: rotatePullTop .5s both ease;
 	animation: rotatePullTop .5s both ease;
 }
@@ -494,8 +494,8 @@
 
 /* fold */
 .rotateFoldRight {
-	-webkit-transform-origin: 0% 50%;
-	transform-origin: 0% 50%;
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
 	-webkit-animation: rotateFoldRight .7s both ease;
 	animation: rotateFoldRight .7s both ease;
 }
@@ -512,8 +512,8 @@
 	animation: rotateFoldTop .7s both ease;
 }
 .rotateFoldBottom {
-	-webkit-transform-origin: 50% 0%;
-	transform-origin: 50% 0%;
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
 	-webkit-animation: rotateFoldBottom .7s both ease;
 	animation: rotateFoldBottom .7s both ease;
 }
@@ -526,8 +526,8 @@
 	animation: rotateUnfoldLeft .7s both ease;
 }
 .rotateUnfoldRight {
-	-webkit-transform-origin: 0% 50%;
-	transform-origin: 0% 50%;
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
 	-webkit-animation: rotateUnfoldRight .7s both ease;
 	animation: rotateUnfoldRight .7s both ease;
 }
@@ -538,8 +538,8 @@
 	animation: rotateUnfoldTop .7s both ease;
 }
 .rotateUnfoldBottom {
-	-webkit-transform-origin: 50% 0%;
-	transform-origin: 50% 0%;
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
 	-webkit-animation: rotateUnfoldBottom .7s both ease;
 	animation: rotateUnfoldBottom .7s both ease;
 }
@@ -552,14 +552,14 @@
 	animation: rotateRoomLeftOut .8s both ease;
 }
 .rotateRoomLeftIn {
-	-webkit-transform-origin: 0% 50%;
-	transform-origin: 0% 50%;
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
 	-webkit-animation: rotateRoomLeftIn .8s both ease;
 	animation: rotateRoomLeftIn .8s both ease;
 }
 .rotateRoomRightOut {
-	-webkit-transform-origin: 0% 50%;
-	transform-origin: 0% 50%;
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
 	-webkit-animation: rotateRoomRightOut .8s both ease;
 	animation: rotateRoomRightOut .8s both ease;
 }
@@ -576,14 +576,14 @@
 	animation: rotateRoomTopOut .8s both ease;
 }
 .rotateRoomTopIn {
-	-webkit-transform-origin: 50% 0%;
-	transform-origin: 50% 0%;
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
 	-webkit-animation: rotateRoomTopIn .8s both ease;
 	animation: rotateRoomTopIn .8s both ease;
 }
 .rotateRoomBottomOut {
-	-webkit-transform-origin: 50% 0%;
-	transform-origin: 50% 0%;
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
 	-webkit-animation: rotateRoomBottomOut .8s both ease;
 	animation: rotateRoomBottomOut .8s both ease;
 }
@@ -602,14 +602,14 @@
 	animation: rotateCubeLeftOut .6s both ease-in;
 }
 .rotateCubeLeftIn {
-	-webkit-transform-origin: 0% 50%;
-	transform-origin: 0% 50%;
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
 	-webkit-animation: rotateCubeLeftIn .6s both ease-in;
 	animation: rotateCubeLeftIn .6s both ease-in;
 }
 .rotateCubeRightOut {
-	-webkit-transform-origin: 0% 50%;
-	transform-origin: 0% 50%;
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
 	-webkit-animation: rotateCubeRightOut .6s both ease-in;
 	animation: rotateCubeRightOut .6s both ease-in;
 }
@@ -626,14 +626,14 @@
 	animation: rotateCubeTopOut .6s both ease-in;
 }
 .rotateCubeTopIn {
-	-webkit-transform-origin: 50% 0%;
-	transform-origin: 50% 0%;
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
 	-webkit-animation: rotateCubeTopIn .6s both ease-in;
 	animation: rotateCubeTopIn .6s both ease-in;
 }
 .rotateCubeBottomOut {
-	-webkit-transform-origin: 50% 0%;
-	transform-origin: 50% 0%;
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
 	-webkit-animation: rotateCubeBottomOut .6s both ease-in;
 	animation: rotateCubeBottomOut .6s both ease-in;
 }
@@ -652,14 +652,14 @@
 	animation: rotateCarouselLeftOut .8s both ease;
 }
 .rotateCarouselLeftIn {
-	-webkit-transform-origin: 0% 50%;
-	transform-origin: 0% 50%;
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
 	-webkit-animation: rotateCarouselLeftIn .8s both ease;
 	animation: rotateCarouselLeftIn .8s both ease;
 }
 .rotateCarouselRightOut {
-	-webkit-transform-origin: 0% 50%;
-	transform-origin: 0% 50%;
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
 	-webkit-animation: rotateCarouselRightOut .8s both ease;
 	animation: rotateCarouselRightOut .8s both ease;
 }
@@ -676,14 +676,14 @@
 	animation: rotateCarouselTopOut .8s both ease;
 }
 .rotateCarouselTopIn {
-	-webkit-transform-origin: 50% 0%;
-	transform-origin: 50% 0%;
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
 	-webkit-animation: rotateCarouselTopIn .8s both ease;
 	animation: rotateCarouselTopIn .8s both ease;
 }
 .rotateCarouselBottomOut {
-	-webkit-transform-origin: 50% 0%;
-	transform-origin: 50% 0%;
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
 	-webkit-animation: rotateCarouselBottomOut .8s both ease;
 	animation: rotateCarouselBottomOut .8s both ease;
 }

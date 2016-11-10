@@ -1458,7 +1458,8 @@ Deck.prototype = {
       return;
     }
 
-    var style = $(step)[0].style[this.Tarot.transformProp],
+      //noinspection UnterminatedStatementJS
+      var style = $(step)[0].style[this.Tarot.transformProp],
         translate = style.match(/translate3d\(([0-9\.%a-z\,\s\-]*)\)/)[1].split(', '),
         x = parseFloat(translate[0].replace(/[%px]+/, '')),
         y = parseFloat(translate[1].replace(/[%px]+/, '')),
@@ -1980,7 +1981,8 @@ Deck.prototype = {
   },
   
   bigBang: function(radius, rotation){
-    var tween, i, alpha, beta = Math.PI * -90 / 180, _y
+      //noinspection UnterminatedStatementJS
+      var tween, i, alpha, beta = Math.PI * -90 / 180, _y
         that = this,
         _times = this.params.times,
         _positions = this.params.position,
@@ -3150,7 +3152,8 @@ Tarot.prototype = {
           cardIdTwo = $(_cards[index+1]).attr('id').match(/card_(.*)/)[1];
          
       if(parseInt(cardIdOne) > parseInt(cardIdTwo)){
-        cardIdOne = cardIdTwo
+          //noinspection UnterminatedStatementJS
+          cardIdOne = cardIdTwo
         cardIdTwo = $(_cards[index]).attr('id').match(/card_(.*)/)[1];
       };
 
@@ -3199,7 +3202,8 @@ Tarot.prototype = {
           cardIdTwo = $(_cards[index+1]).attr('id').match(/card_(.*)/)[1];
          
       if(parseInt(cardIdOne) > parseInt(cardIdTwo)){
-        cardIdOne = cardIdTwo
+          //noinspection UnterminatedStatementJS
+          cardIdOne = cardIdTwo
         cardIdTwo = $(_cards[index]).attr('id').match(/card_(.*)/)[1];
       };
 
@@ -3296,48 +3300,61 @@ var Transfo = {
 };
 
 var fsapi = (function (undefined) {
- var dom,
+    //noinspection UnterminatedStatementJS
+    var dom,
  enter,
  exit,
  fullscreen
  // support for entering fullscreen
- dom = document.createElement('img')
-   if ('requestFullscreen' in dom) {
+    //noinspection UnterminatedStatementJS
+    dom = document.createElement('img')
+    //noinspection UnterminatedStatementJS
+    if ('requestFullscreen' in dom) {
      enter = 'requestFullscreen' // W3C proposal
-   } else if ('requestFullScreen' in dom) {
-     enter = 'requestFullScreen' // mozilla proposal
-   } else if ('webkitRequestFullScreen' in dom) {
-     enter = 'webkitRequestFullScreen' // webkit
-   } else if ('mozRequestFullScreen' in dom) {
-     enter = 'mozRequestFullScreen' // firefox
-   } else {
-     enter = undefined // not supported in this browser
-   }
+    } else { //noinspection UnterminatedStatementJS
+        if ('requestFullScreen' in dom) {
+            enter = 'requestFullScreen' // mozilla proposal
+        } else { //noinspection UnterminatedStatementJS
+            if ('webkitRequestFullScreen' in dom) {
+                enter = 'webkitRequestFullScreen' // webkit
+            } else if ('mozRequestFullScreen' in dom) {
+                enter = 'mozRequestFullScreen' // firefox
+            } else {
+                enter = undefined // not supported in this browser
+            }
+        }
+    }
    // support for exiting fullscreen
-   if ('exitFullscreen' in document) {
+    //noinspection UnterminatedStatementJS
+    if ('exitFullscreen' in document) {
      exit = 'exitFullscreen' // W3C proposal
-   } else if ('msExitFullscreen' in document) {
-     exit = 'msExitFullscreen' // mozilla proposal
-   } else if ('cancelFullScreen' in document) {
-     exit = 'cancelFullScreen' // mozilla proposal
-   } else if ('webkitCancelFullScreen' in document) {
-     exit = 'webkitCancelFullScreen' // webkit
-   } else if ('mozCancelFullScreen' in document) {
-     exit = 'mozCancelFullScreen' // firefox
-   } else {
-     exit = undefined // not supported in this browser
+    } else { //noinspection UnterminatedStatementJS
+        if ('msExitFullscreen' in document) {
+            exit = 'msExitFullscreen' // mozilla proposal
+        } else if ('cancelFullScreen' in document) {
+            exit = 'cancelFullScreen' // mozilla proposal
+        } else if ('webkitCancelFullScreen' in document) {
+            exit = 'webkitCancelFullScreen' // webkit
+        } else if ('mozCancelFullScreen' in document) {
+            exit = 'mozCancelFullScreen' // firefox
+        } else {
+            exit = undefined // not supported in this browser
+        }
    }
    // support for detecting when in fullscreen
-   if ('fullscreen' in document) {
+    //noinspection UnterminatedStatementJS
+    if ('fullscreen' in document) {
      fullscreen = 'fullscreen' // W3C proposal
-   } else if ('msFullscreenElement' in document) {
-     fullscreen = 'msFullscreenElement' // mozilla proposal
-   } else if ('webkitIsFullScreen' in document) {
-     fullscreen = 'webkitIsFullScreen' // webkit
-   } else if ('mozFullScreen' in document) {
-     fullscreen = 'mozFullScreen' // firefox
-   } else {
-     fullscreen = undefined // not supported in this browser
+    } else { //noinspection UnterminatedStatementJS
+        if ('msFullscreenElement' in document) {
+            fullscreen = 'msFullscreenElement' // mozilla proposal
+        } else if ('webkitIsFullScreen' in document) {
+            fullscreen = 'webkitIsFullScreen' // webkit
+        } else if ('mozFullScreen' in document) {
+            fullscreen = 'mozFullScreen' // firefox
+        } else {
+            fullscreen = undefined // not supported in this browser
+        }
    }
    
    if(fullscreen == 'msFullscreenElement')
@@ -3641,6 +3658,7 @@ $(document).ready(function() {
   });
 });
 /* PRODUCT.JS */
+//noinspection UnterminatedStatementJS
 var updateGoogleAdAppearance = function()
 {
     $('.google_ad').css({
@@ -3709,6 +3727,7 @@ var fullLayout = {
 var pdfProductsIds = [729, 755, 763, 764, 766, 770, 774, 778, 780, 784, 787, 788, 789, 790, 791];
 
 // Update form with saved data
+//noinspection UnterminatedStatementJS
 var checkFormDatas = function() {
     $.each(form_infos, function(field, value) {
         $('#'+field).val(value);
@@ -3728,6 +3747,7 @@ var checkSettedFieldsValues = function(){
     }
 };
 
+//noinspection UnterminatedStatementJS
 var isAstroApplication = function(){
   if (typeof($('#product').data('game_type_id')) != 'undefined') {
     return true;

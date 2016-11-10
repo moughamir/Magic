@@ -16,9 +16,7 @@
 </div> -->
     <section class="col-md-8" id="">
         <div class="container" id="product-container">
-            <audio autoplay="" loop="" preload="">
-                <source src="app/audio/ambient-forest-birds.m4a" type="audio/mpeg">
-            </audio>
+
             <article class="parallax-tarot" id="impress">
                 <!-- <img src="app/images/prototype.png" alt=""> -->
                 <section id="intro" class="slide step" data-x="328" data-y="321" data-z="500">
@@ -68,38 +66,53 @@
                 </section>
                 <section id="interpret" class="hidden slide step" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
                     <!-- Modal Test-->
+                    XXX
+                </section>
+                <section id="read" class="hidden slide step" data-x="6700" data-y="-300" data-scale="6">
+                    <h1>FFF</h1>
+                </section>
+                <section id="result" class="hidden slide step" data-x="6300" data-y="2000" data-rotate="20" data-scale="4">
                     <div class="modal-bgOverlay"></div>
                     <section class="modalo">
                         <header class="voyant"><img src="app/images/girl.jpeg" alt="Hello"></header>
                         <article class="modalo-content">
                             <section class="stack bref">
                                 <article class="sub-art">
-                                    <p>Quel tirage passionnant ! J'ai tant de choses à vous révéler ! Sachez que, malgré les apparences, les événements que vous traversez sont une chance, une opportunité pour changer votre destinée. C'est ce que révèle de façon significative votre tirage.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum sit voluptatum, aliquam, earum perferendis quae magnam ad illo dolore illum, praesentium aperiam at hic architecto fugiat ab error eligendi odio.</p>
+                                    <p>Quel tirage passionnant ! J'ai tant de choses à vous révéler ! Sachez que, malgré
+                                        les apparences, les événements que vous traversez sont une chance, une
+                                        opportunité pour changer votre destinée. C'est ce que révèle de façon
+                                        significative votre tirage.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum sit voluptatum,
+                                        aliquam, earum perferendis quae magnam ad illo dolore illum, praesentium aperiam
+                                        at hic architecto fugiat ab error eligendi odio.</p>
                                 </article>
-                                <button type="submit" name="insc" class="btn"><span class="btn-text">Commencer</span></button>
+                                <button type="submit" name="insc" class="btn"><span class="btn-text">Commencer</span>
+                                </button>
                             </section>
                             <section class="stack con hidden">
                                 <form class="con-form" action="ajaxHandler.php" method="post" accept-charset="utf-8">
                                     <!-- ########## identification formulaire ########## -->
-                                    <input type="hidden" name="source" value="tarot-direct-rc-g" />
-                                    <input type="hidden" name="method" value="general-suscribe" />
-                                    <input type="hidden" name="support" value="tarot" />
-                                    <input type="hidden" name="site" value="myastro.dev" />
-                                    <input type="hidden" name="affiliation" value="reflexcache" />
-                                    <input type="hidden" name="dri" value="tarot-direct-dri" />
+                                    <input type="hidden" name="source" value="tarot-direct-rc-g"/>
+                                    <input type="hidden" name="method" value="general-suscribe"/>
+                                    <input type="hidden" name="support" value="tarot"/>
+                                    <input type="hidden" name="site" value="myastro.dev"/>
+                                    <input type="hidden" name="affiliation" value="reflexcache"/>
+                                    <input type="hidden" name="dri" value="tarot-direct-dri"/>
                                     <!-- ########## autres champs pré-remplis ########## -->
-                                    <input type="hidden" name="tel_needed" value="1" />
-                                    <input type="hidden" name="cguv" value="1" />
-                                    <input type="hidden" name="partenaires" value="1" />
+                                    <input type="hidden" name="tel_needed" value="1"/>
+                                    <input type="hidden" name="cguv" value="1"/>
+                                    <input type="hidden" name="partenaires" value="1"/>
                                     <!-- ############################################### -->
                                     <div class="checkbox-group">
-                                        <label class="control control--radio"><img src="app/images/icons/venus.svg" alt="Venus - Female sign" class="icon">Femme
-                                            <input type="radio" name="radio" checked="checked" />
+                                        <label class="control control--radio"><img src="app/images/icons/venus.svg"
+                                                                                   alt="Venus - Female sign"
+                                                                                   class="icon">Femme
+                                            <input type="radio" name="radio" checked="checked"/>
                                             <div class="control__indicator"></div>
                                         </label>
-                                        <label class="control control--radio"><img src="app/images/icons/mars.svg" alt="Mars - Male sign" class="icon">Home
-                                            <input type="radio" name="radio" />
+                                        <label class="control control--radio"><img src="app/images/icons/mars.svg"
+                                                                                   alt="Mars - Male sign" class="icon">Home
+                                            <input type="radio" name="radio"/>
                                             <div class="control__indicator"></div>
                                         </label>
                                     </div>
@@ -108,18 +121,24 @@
                                         <div class="label-text">Votre prénom</div>
                                     </label>
                                     <label class="label" for="ddn">
-                                        <input type="text" id="ddn" name="ddn" pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d" placeholder="JJ/MM/AAAA" required>
+                                        <input type="text" id="ddn" name="ddn"
+                                               pattern="(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d"
+                                               placeholder="JJ/MM/AAAA" required>
                                         <div class="label-text">Votre date de naissance</div>
                                     </label>
                                     <label class="label" for="email">
-                                        <input type="email" id="email" name="email" placeholder="moi@exemple.fr" required>
+                                        <input type="email" id="email" name="email" placeholder="moi@exemple.fr"
+                                               required>
                                         <div class="label-text">Votre e-mail</div>
                                     </label>
                                     <label class="label" for="tel">
-                                        <input type="tel" id="tel" name="tel" pattern="^(?:0|\(?\+33\)?\s?|0033\s?)[1-79](?:[\.\-\s]?\d\d){4}$" required>
+                                        <input type="tel" id="tel" name="tel"
+                                               pattern="^(?:0|\(?\+33\)?\s?|0033\s?)[1-79](?:[\.\-\s]?\d\d){4}$"
+                                               required>
                                         <div class="label-text">Votre numéro de téléphone</div>
                                     </label>
-                                    <button type="submit" name="valider" class="btn getting ripple"><span class="btn-text">Découvrir</span></button>
+                                    <button type="submit" name="valider" class="btn getting ripple"><span
+                                            class="btn-text">Découvrir</span></button>
                                 </form>
                             </section>
                             <section class="stack thanks hidden">
@@ -128,12 +147,6 @@
                             </section>
                         </article>
                     </section>
-                </section>
-                <section id="read" class="hidden slide step" data-x="6700" data-y="-300" data-scale="6">
-                    <h1>FFF</h1>
-                </section>
-                <section id="result" class="hidden slide step" data-x="6300" data-y="2000" data-rotate="20" data-scale="4">
-                    <h1>GGG</h1>
                 </section>
             </article>
             <aside class="utils">
@@ -211,34 +224,20 @@
         /*
          Animations Trigger
          */
-        $('.
-        btn
-        ').click(function () {
+        $('.btn').click(function () {
         $('#intro').addClass('rotateCarouselLeftOut');
         $('#voyant').removeClass('hidden').addClass('rotateCarouselLeftIn');
         console.info('Switching scene (1->2)');
         $('.parallax-tarot').animate({backgroundPosition: '-651px 0px'}, 700, 'swing');
         });
         $('#voyant').click(function () {
-                    $('
-                    #voyant
-                    ').removeClass('
-                    rotateCarouselLeftIn
-                    ').addClass('
-                    rotateSlideOut
-                    ');
+            $('#voyant').removeClass('rotateCarouselLeftIn').addClass('rotateSlideOut');
                     $('#pick').removeClass('hidden').addClass('rotateSlideIn');
                     $('.parallax-tarot').animate({backgroundPosition: '-1307px 0px'}, 700, 'swing');
                 }
         );
         $('#pick').click(function () {
-                    $('
-                    #pick
-                    ').removeClass('
-                    rotateSlideIn
-                    ').addClass('
-                    moveToBottomFade
-                    ');
+            $('#pick').removeClass('rotateSlideIn').addClass('moveToBottomFade');
                     $('#draw').removeClass('hidden').addClass('moveFromTopFade');
                     $('.parallax-tarot').animate({backgroundPosition: '-1307px -641px'}, 700, 'swing');
                 }

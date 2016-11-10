@@ -15,14 +15,14 @@ $(document).ready(function() {
     =            Variables settings            =
     ==========================================*/
     /**
-        
-    	TODO:
-    	- setting a variables array
-    	- looping through each var and set a $ selector
-        
+
+     TODO:  - setting a variables array
+     - looping through each var and set a $ selector
+     FIXME: Fix This!
      */
 
-    var steps = ["intro", "voyant", "pick", "draw", "interpret", "read", "resault"];
+    var steps;
+    steps = ["intro", "voyant", "pick", "draw", "interpret", "read", "resault"];
 
     $.each(steps, function(i, step) {
         var step = $("#" + step);
@@ -36,7 +36,21 @@ $(document).ready(function() {
     ], {
         duration: 1000,
         iterations: Infinity
-    })
+    });
+
+
+    /*
+     * SoundFX Initial
+     * TODO: Add Ambient sounce
+     * */
+    var sfxOne;
+    sfxOne = new Audio("../app/audio/ambient-forest-birds.m4a");
+    sfxOne.addEventListener('ended', function () {
+        this.currentTime = 0;
+        this.play();
+    }, false);
+    sfxOne.play();
+    console.log("Init Audio");
 
 });
 

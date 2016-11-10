@@ -139,19 +139,12 @@ button {
 
 /* btns */
 
-/* .getting {
-    width: 155px;
-height: 46px;
-    background: #4F01AF;
-    color: #fff;
-    font-family: 'Roboto', sans-serif;
-    position: relative;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -80%);
-    font-size: 1.22rem;
+.getting {
+  position: absolute;
+  top: 458px;
+  left: 50%;
+  transform: translateX(-50%);
 }
- */
 
 /* End of btns*/
 
@@ -246,6 +239,7 @@ svg#tarot-title {
     left: 50%;
     top: 40px;
     transform: translate(-50%);
+  filter: drop-shadow(1px 1px 1px);
     & * {
         fill-opacity: 0;
         transition: fill-opacity 1s;
@@ -418,18 +412,18 @@ cursive;
         }
     }
     &-content {
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 480px;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      position: relative;
         .stack {
-            display: flex;
-            position: absolute;
-            width: 90%;
-            flex-direction: column;
-            align-items: center;
+          display: flex;
+          width: 90%;
+          flex-direction: column;
+          align-items: center;
             .sub-art {
                 margin-bottom: 30px;
             }
@@ -459,10 +453,7 @@ img.icon {
     height: 62px;
     border-bottom: 2px solid #4A4A4A;
     width: $input-w;
-  position: absolute;
-  top: 458px;
-  left: 50%;
-  transform: translateX(-50%);
+
 }
 
 .con {
