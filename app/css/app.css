@@ -1693,7 +1693,8 @@ section.col-md-8 {
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  position: relative; }
 
 .flex-c {
   display: -webkit-box;
@@ -2199,15 +2200,15 @@ svg#tarot-title {
 .fullscreen {
   z-index: 9999;
   opacity: 1;
-  display: block;
+  display: block !important;
   position: absolute;
-  width: 42px;
-  height: 42px;
+  width: 42px !important;
+  height: 42px !important;
   padding: 0;
   right: 10px;
   top: 10px;
-  background: #15161766;
-  border: 1px solid white; }
+  background: #15161766 !important;
+  border: 1px solid white !important; }
 
 img.icon {
   width: 17px;
@@ -2403,4 +2404,5 @@ img.icon {
 .thanks p {
   font-family: "Open Sans", sans-serif;
   font-size: 2em; }
+
 /*# sourceMappingURL=app.css.map */

@@ -60,6 +60,7 @@ section.col-md-8 {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .flex-c {
@@ -444,15 +445,15 @@ cursive;
 .fullscreen {
   z-index: 9999;
   opacity: 1;
-  display: block;
+  display: block !important;
   position: absolute;
-  width: 42px;
-  height: 42px;
+  width: 42px !important;
+  height: 42px !important;
   padding: 0;
   right: 10px;
   top: 10px;
-  background: #15161766;
-  border: 1px solid white;
+  background: #15161766 !important;
+  border: 1px solid white !important;
 }
 
 $text-color: #9B9B9B;
