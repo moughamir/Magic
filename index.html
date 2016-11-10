@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="app/css/app.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans|Oxygen|Merienda+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans|Oxygen|Merienda+One|Lobster+Two" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
 </head>
@@ -16,7 +16,7 @@
     <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
     <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
 </div> -->
-    <section class="col-md-8" id="application">
+    <section class="col-md-8" id="application"  ng-app="myApplication" ng-controller="postController as tarot">
         <div class="container" id="product-container">
 
             <article class="parallax-tarot" id="impress">
@@ -52,13 +52,36 @@
                     </button>
                 </section>
                 <section id="voyant" class="hidden slide step" data-x="0">
-                    <h1>BBB</h1>
+                    <img src="app/images/titre-mini.png" alt="" class="titre-mini">
+                    <div class="colibri colibri2">
+                        <div class="wings"></div>
+                        <div class="nowings"></div>
+                    </div>
+                    <div class="colibri colibri1">
+                        <div class="wings"></div>
+                        <div class="nowings"></div>
+                    </div>
+                    <article class="invitaion">
+                        <!-- IDEA: On peut changer set section par une list de seletion (Best for UX)-->
+                        <p>Détendez-vous et concentrez-vous sur votre question. Mélangez les cartes puis cliquez sur 3 cartes de la main gauche.<br>
+                            La 1ère carte vous révèle vos obstacles<br>
+                            La 2ème vous propose ses conseils<br>
+                            La 3ème vous dévoile votre futur.</p>
+                        <aside class="cards shuffle">
+                            <li class="cardC " ng-repeat="card in tarot">
+                                <img class="card-front"
+                                     ng-src="app/images/major/backface.png"
+                                     alt="card.name"/>
+                            </li>
+                        </aside>
+                    </article>
+
                 </section>
                 <section id="pick" class="hidden slide step" data-x="-328" data-y="-321">
-                    <div ng-app="myApplication" ng-controller="postController as tarot" class="flex-c">
+                    <div class="flex-c">
                         <ul class="circle-container">
                             <li class="cardC" ng-repeat="card in tarot"><img class="card-front"
-                                                                             ng-src="app/images/major/backface.png"
+                                                                             ng-src="app/images/major/{{card.value}}.png"
                                                                              alt="card.name">
                                 <!--<li class="cardC" ng-repeat="card in tarot"><img class="card-front" ng-src="app/images/major/{{card.value}}.png" alt="card.name">-->
                                 <!-- <article class="cardReading" ng-bind-html="card.reading"></article>	 -->
@@ -93,10 +116,10 @@
                                         aliquam, earum perferendis quae magnam ad illo dolore illum, praesentium aperiam
                                         at hic architecto fugiat ab error eligendi odio.</p>
                                 </article>
-                                <button type="submit" name="insc" class="btn"><span class="btn-text">Commencer</span>
+                                <input type="button" name="next" class="btn next action-button" value="Commencer" />
                                 </button>
                             </section>
-                            <section class="stack con hidden">
+                            <section class="stack con">
                                 <form class="con-form" action="ajaxHandler.php" method="post" accept-charset="utf-8">
                                     <!-- ########## identification formulaire ########## -->
                                     <input type="hidden" name="source" value="tarot-direct-rc-g"/>
@@ -144,11 +167,11 @@
                                                required>
                                         <div class="label-text">Votre numéro de téléphone</div>
                                     </label>
-                                    <button type="submit" name="valider" class="btn getting ripple"><span
+                                    <button type="submit" name="valider" class="btn next getting ripple"><span
                                             class="btn-text">Découvrir</span></button>
                                 </form>
                             </section>
-                            <section class="stack thanks hidden">
+                            <section class="stack thanks">
                                 <h2 class="sayThanks">Merci!</h2>
                                 <p>Nous vous contacterons bientôt.</p>
                             </section>
@@ -238,12 +261,12 @@
         console.info('Switching scene (1->2)');
         $('.parallax-tarot').animate({backgroundPosition: '-651px 0px'}, 700, 'swing');
         });
-        $('#voyant').click(function () {
+        /*$('#voyant').click(function () {
             $('#voyant').removeClass('rotateCarouselLeftIn').addClass('rotateSlideOut');
                     $('#pick').removeClass('hidden').addClass('rotateSlideIn');
                     $('.parallax-tarot').animate({backgroundPosition: '-1307px 0px'}, 700, 'swing');
                 }
-        );
+        );*/
         $('#pick').click(function () {
             $('#pick').removeClass('rotateSlideIn').addClass('moveToBottomFade');
                     $('#draw').removeClass('hidden').addClass('moveFromTopFade');
@@ -337,7 +360,18 @@
                 $('.con').removeClass('hidden').addClass('moveFromLeft');
             }, 0);
         });
+        $(function(){
+            var i = 0;
+            $(".shuffle").click(function(){
+                $("li")
+                        .animate({left: 15+"%", marginTop: 2+"em"},500, "easeOutBack",function(){i--;$(this).css("z-index", i)})
+                        .animate({left: 38+"%", marginTop: 0+"em"},500, "easeOutBack");
+                $('#voyant').removeClass('rotateCarouselLeftIn').addClass('rotateSlideOut');
+                $('#pick').removeClass('hidden').addClass('rotateSlideIn');
+                $('.parallax-tarot').animate({backgroundPosition: '-1307px 0px'}, 700, 'swing');
 
+            });
+        });
         document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
     </script>
 

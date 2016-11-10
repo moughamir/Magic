@@ -45,13 +45,27 @@ $(document).ready(function() {
      * */
     var sfxOne;
     sfxOne = new Audio("app/audio/ambient-forest-birds.m4a");
-    sfxOne.addEventListener('ended', function () {
+    sfxOne.addEventListener("ended", function () {
         this.currentTime = 0;
         this.play();
     }, false);
     sfxOne.play();
-    console.log("Init Audio");
+    console.log("Init Audio One");
+    // Check for display:none|block, ignore visible:true|false
+    //$("#voyant").is(":visible");
 
+    if (!$("#voyant").hasClass("rotateCarouselLeftIn")) {
+    } else {
+        var sfxOne;
+        sfxOne = new Audio("app/audio/hummingbirds.m4a");
+        sfxOne.addEventListener("ended", function () {
+            this.currentTime = 0;
+            this.play();
+        }, false);
+        sfxOne.play();
+        console.log("Init Audio Two");
+    }
+    ;
     /*
      * Let's go to full screen mode
      * */
@@ -60,6 +74,115 @@ $(document).ready(function() {
         $("#product-container").toggleFullScreen();
         console.info("fullscrenn");
     });
+
+    // Shuffle Cards
+    /*
+    * FIXME: Shuffle Cards and change z-index
+    * */
+    (function($){
+
+        $.fn.shuffle = function() {
+
+            var elements = this.get()
+            var copy = [].concat(elements)
+            var shuffled = []
+            var placeholders = []
+
+            // Shuffle the element array
+            while (copy.length) {
+                var rand = Math.floor(Math.random() * copy.length)
+                var element = copy.splice(rand,1)[0]
+                shuffled.push(element)
+            }
+
+            // replace all elements with a plcaceholder
+            for (var i = 0; i < elements.length; i++) {
+                var placeholder = document.createTextNode('')
+                findAndReplace(elements[i], placeholder)
+                placeholders.push(placeholder)
+            }
+
+            // replace the placeholders with the shuffled elements
+            for (var i = 0; i < elements.length; i++) {
+                findAndReplace(placeholders[i], shuffled[i])
+            }
+
+            return $(shuffled)
+
+        }
+
+        function findAndReplace(find, replace) {
+            find.parentNode.replaceChild(replace, find)
+        }
+
+    })(jQuery);
+    $('ul.circle-container li').shuffle();
+
+/*
+* MultiStep Form
+* */
+    /**
+     * Copyright (C) 2016 omnizya.com
+     *
+     *
+     * changelog
+     * 2016-11-08[19:01:01]:revised
+     *
+     * @author moughamir@gmail.com
+     * @version 0.1.0
+     * @since 0.1.0
+     */
+
+
+//jQuery time
+    var current_fs, next_fs; //fieldsets
+    var left, opacity, scale; //fieldset properties which we will animate
+    var animating; //flag to prevent quick multi-click glitches
+
+    $(".next").click(function(){
+        if(animating) return false;
+        animating = true;
+
+        current_fs = $(this).parent();
+        next_fs = $(this).parent().next();
+
+        //show the next fieldset
+        next_fs.show();
+        //hide the current fieldset with style
+        current_fs.animate({opacity: 0}, {
+            step: function(now, mx) {
+                //as the opacity of current_fs reduces to 0 - stored in "now"
+                //1. scale current_fs down to 80%
+                scale = 1 - (1 - now) * 0.2;
+                //2. bring next_fs from the right(50%)
+                left = (now * 50)+"%";
+                //3. increase opacity of next_fs to 1 as it moves in
+                opacity = 1 - now;
+                current_fs.css({
+                    'transform': 'scale('+scale+')',
+                    'position': 'absolute'
+                });
+                next_fs.css({'left': left, 'opacity': opacity});
+            },
+            duration: 800,
+            complete: function(){
+                current_fs.hide();
+                animating = false;
+            },
+            //this comes from the custom easing plugin
+            easing: 'easeInOutBack'
+        });
+    });
+
+    $(".submit").click(function(){
+        return false;
+    });
+
+
+
+
+
+
 });
 /* Cards fetcher*/
 

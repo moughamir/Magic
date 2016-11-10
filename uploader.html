@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyAstro Landing Admin</title>
+</head>
+<body>
+<form id="uploader" method="post" enctype="multipart/form-data" action="addTheme.php">
+    <p>Titre:</p>
+    <input type="text" name="landingTitle"/>
+    <p>Background:</p>
+    <input type="hidden" name="size" value="350000">
+    <input type="file" name="background">
+    <p>Introduction:</p>
+    <textarea rows="10" cols="35" name="landingIntro">
+</textarea>
+    <input id="save" TYPE="submit" name="upload" title="Add data to the Database" value="Add Member"/>
+</form>
+<p id='result'></p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+    $('#uploader').submit(function(){
+        return false;
+    });
+
+    $('#save').click(function(){
+        $.post(
+                $('#uploader').attr('action'),
+                $('#uploader :input').serializeArray(),
+                function(result){
+                    $('#result').html(result);
+                }
+        );
+    });
+</script>
+</body>
+</html>

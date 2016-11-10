@@ -1,0 +1,76 @@
+.colibri1 {
+  top: 36%;
+  right: 0%;
+  animation: birdBotTop 5s 1 1s both;
+  .wings {
+    background-image: url(http://www.horoscope.fr/images/1/v6/product/tarot/686/piou1_bis.png);
+  }
+  .nowings {
+    background-image: url(http://www.horoscope.fr/images/1/v6/product/tarot/686/piou1_bis_nowings.png);
+  }
+}
+.colibri2{
+  top: 82px;
+  left: 127px;
+  display: block;
+  animation: birdTopBot 5s 1 1s both;
+}
+.colibri2 .nowings { background-image: url(http://www.horoscope.fr/images/1/v6/product/tarot/686/piou2_nowings.png); }
+.colibri2 .wings { background-image: url(http://www.horoscope.fr/images/1/v6/product/tarot/686/piou2.png); }
+
+.colibri {
+  width: 129px;
+  height: 104px;
+  position: absolute;
+  .wings {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    width: 129px;
+    height: 104px;
+    background-size: 50%;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    animation: eblink 0.1s infinite;
+  }
+  .nowings {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    width: 129px;
+    height: 104px;
+    background-size: 50%;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    animation: iblink 0.1s infinite;
+  }
+}
+
+@keyframes eblink { 0% { opacity: 0.1; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes iblink { 0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes birdBotTop {
+  0%{
+    transform: translate(0, 0);
+  }
+  70%{transform: translate(-45%, -55%);}
+  80%{transform: translate(-40%, -50%);}
+  90%{transform: translate(-45%, -55%);}
+  100%{
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes birdTopBot {
+  0%{display: none; transform: translate(-151%, 136%);}
+  10%{transform: translate(-151%, 136%);}
+  80%{transform: translate(0, 0);}
+  100%{transform: translate(-10%,10%);}
+
+}
