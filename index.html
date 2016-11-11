@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="app/css/app.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans|Oxygen|Merienda+One|Lobster+Two" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-
 </head>
 
 <body class="impress-not-supported">
@@ -16,12 +15,10 @@
     <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
     <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
 </div> -->
-    <section class="col-md-8" id="application"  ng-app="myApplication" ng-controller="postController as tarot">
+    <section class="col-md-8" id="application" ng-app="myApplication" ng-controller="postController as tarot">
         <div class="container" id="product-container">
-
             <article class="parallax-tarot" id="impress">
-                <!-- <img src="app/images/prototype.png" alt=""> -->
-                <section id="intro" class="slide step" data-x="328" data-y="321" data-z="500">
+                <section id="intro" class="slide step">
                     <!-- Logo Here -->
                     <svg id="tarot-title">
                         <g>
@@ -51,7 +48,7 @@
                     <button id="getStart" class="btn getting flex-c ripple"><span class="btn-text">Découvrir</span>
                     </button>
                 </section>
-                <section id="voyant" class="hidden slide step" data-x="0">
+                <section id="voyant" class="hidden slide step">
                     <img src="app/images/titre-mini.png" alt="" class="titre-mini">
                     <div class="colibri colibri2">
                         <div class="wings"></div>
@@ -63,44 +60,134 @@
                     </div>
                     <article class="invitaion">
                         <!-- IDEA: On peut changer set section par une list de seletion (Best for UX)-->
-                        <p>Détendez-vous et concentrez-vous sur votre question. Mélangez les cartes puis cliquez sur 3 cartes de la main gauche.<br>
-                            La 1ère carte vous révèle vos obstacles<br>
-                            La 2ème vous propose ses conseils<br>
-                            La 3ème vous dévoile votre futur.</p>
-                        <aside class="cards shuffle">
-                            <li class="cardC " ng-repeat="card in tarot">
-                                <img class="card-front"
-                                     ng-src="app/images/major/backface.png"
-                                     alt="card.name"/>
-                            </li>
-                        </aside>
-                    </article>
-
-                </section>
-                <section id="pick" class="hidden slide step" data-x="-328" data-y="-321">
-                    <div class="flex-c">
-                        <ul class="circle-container">
-                            <li class="cardC" ng-repeat="card in tarot"><img class="card-front"
-                                                                             ng-src="app/images/major/{{card.value}}.png"
-                                                                             alt="card.name">
-                                <!--<li class="cardC" ng-repeat="card in tarot"><img class="card-front" ng-src="app/images/major/{{card.value}}.png" alt="card.name">-->
-                                <!-- <article class="cardReading" ng-bind-html="card.reading"></article>	 -->
-                            </li>
-                            <!-- <li class="cardC" ng-repeat="card in tarot"><img class="card-front" ng-src="app/images/major/{{card.value}}.jpg" alt="card.name"> -->
+                        <p>Détendez-vous et concentrez-vous sur votre question.
+                            <br> Mélangez les cartes puis cliquez sur 3 cartes de la main gauche.
+                            <br>
+                        <ul class="cards-pos">
+                            <li class="def">La 1ère carte vous révèle vos obstacles</li>
+                            <li class="def">La 2ème vous propose ses conseils</li>
+                            <li class="def">La 3ème vous dévoile votre futur.</li>
                         </ul>
+                        </p>
+                        <ul id="baraja-el" class="cards shuffle baraja-container">
+                            <li class="cardC"><img src="app/images/major/backface.png" alt="Tarot Cards"
+                                                   class="card-front"></li>
+                            <li class="cardC"><img src="app/images/major/backface.png" alt="Tarot Cards"
+                                                   class="card-front"></li>
+                            <li class="cardC"><img src="app/images/major/backface.png" alt="Tarot Cards"
+                                                   class="card-front"></li>
+                            <li class="cardC"><img src="app/images/major/backface.png" alt="Tarot Cards"
+                                                   class="card-front"></li>
+                            <li class="cardC"><img src="app/images/major/backface.png" alt="Tarot Cards"
+                                                   class="card-front"></li>
+                            <li class="cardC"><img src="app/images/major/backface.png" alt="Tarot Cards"
+                                                   class="card-front"></li>
+                            <li class="cardC"><img src="app/images/major/backface.png" alt="Tarot Cards"
+                                                   class="card-front"></li>
+                            <li class="cardC"><img src="app/images/major/backface.png" alt="Tarot Cards"
+                                                   class="card-front"></li>
+                            <li class="cardC"><img src="app/images/major/backface.png" alt="Tarot Cards"
+                                                   class="card-front"></li>
+                            <li class="cardC"><img src="app/images/major/backface.png" alt="Tarot Cards"
+                                                   class="card-front"></li>
+                            <li class="cardC"><img src="app/images/major/backface.png" alt="Tarot Cards"
+                                                   class="card-front"></li>
+                            <li class="cardC"><img src="app/images/major/backface.png" alt="Tarot Cards"
+                                                   class="card-front"></li>
+                            <li class="cardC"><img src="app/images/major/backface.png" alt="Tarot Cards"
+                                                   class="card-front"></li>
+                            <li class="cardC"><img src="app/images/major/backface.png" alt="Tarot Cards"
+                                                   class="card-front"></li>
+                            <li class="cardC"><img src="app/images/major/backface.png" alt="Tarot Cards"
+                                                   class="card-front"></li>
+                            <li class="cardC"><img src="app/images/major/backface.png" alt="Tarot Cards"
+                                                   class="card-front"></li>
+                            <li class="cardC"><img src="app/images/major/backface.png" alt="Tarot Cards"
+                                                   class="card-front"></li>
+                            <li class="cardC"><img src="app/images/major/backface.png" alt="Tarot Cards"
+                                                   class="card-front"></li>
+                            <li class="cardC"><img src="app/images/major/backface.png" alt="Tarot Cards"
+                                                   class="card-front"></li>
+                            <li class="cardC"><img src="app/images/major/backface.png" alt="Tarot Cards"
+                                                   class="card-front"></li>
+                            <li class="cardC"><img src="app/images/major/backface.png" alt="Tarot Cards"
+                                                   class="card-front"></li>
+                            <li class="cardC"><img src="app/images/major/backface.png" alt="Tarot Cards"
+                                                   class="card-front"></li>
+                        </ul>
+                    </article>
+                </section>
+                <section id="pick" class="hidden slide step">
+                    <div class="flex-c2">
+                        <div id="scn-tarot">
+                            <section class="ContentBand Tarot" id="cards-container">
+                                <header class="ContentBand-ColumnHeader Title">- Tirez <strong>5 cartes</strong> -
+                                </header>
+                                <div class="PageWrapper ContentBand-Table">
+                                    <div class="ContentBand-Column">
+                                        <article class="WidgetTarot">
+                                            <div id="scn-tarot-draw">
+                                                <ul class="WidgetTarot-Draw" id="baraja-el2">
+                                                    <li class="WidgetTarot-Card notFlipped" ng-repeat="card in tarot"
+                                                        data-card="{{card.value}}">
+                                                        <div class="WidgetTarot-Card-Face front "></div>
+                                                        <div class="WidgetTarot-Card-Face back"></div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <section id="scn-tarot-result">
+                                                <div class="WidgetTarot-Result">
+                                                    <article class="WidgetTarot-Card place"
+                                                             ng-repeat="card in tarot | limitTo:3"
+                                                             data-number="{{card.value}}"></article>
+                                                </div>
+                                            </section>
+                                        </article>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
                     </div>
                 </section>
-                <section id="draw" class="hidden slide step" data-x="3500" data-y="2100" data-rotate="180" data-scale="6">
-                    <h1>DDD</h1>
+                <section id="draw" class="hidden slide step">
+                    <section class="cardSlide">
+                        <article class="cardInfo">
+                            <header class="CardInfoHeader">
+                                <h2>{{card.value}}<span class="separator"></span>{{card.name}}</h2>
+                            </header>
+                            <div class="InforContainer">
+                                <article class="paragraph">{{card.reading}}Lorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit. A
+                                    commodi culpa dignissimos, enim est eveniet fugiat harum ipsum magnam mollitia natus
+                                    odio, pariatur quae qui rerum tempore temporibus vel velit.
+                                </article>
+                                <aside class="MetaInfo">
+                                    <img src="https://placeholdit.imgix.net/~text?txtsize=120&txt=CARD&w=247&h=412"
+                                         alt="{{card.name}}" class="cardImg">
+                                    <footer>
+                                        <div class="zodiac"><img
+                                                src="https://placeholdit.imgix.net/~text?txtsize=60&txt=Zodiac&w=168&h=168"
+                                                alt=""></div>
+                                        <div class="TheElement"><img
+                                                src="https://placeholdit.imgix.net/~text?txtsize=50&txt=Element&w=168&h=168"
+                                                alt=""></div>
+                                    </footer>
+                                </aside>
+                            </div>
+
+                        </article>
+
+
+                    </section>
                 </section>
-                <section id="interpret" class="hidden slide step" data-y="2325" data-z="-3000" data-rotate="300" data-scale="1">
+                <section id="interpret" class="hidden slide step">
                     <!-- Modal Test-->
                     XXX
                 </section>
-                <section id="read" class="hidden slide step" data-x="6700" data-y="-300" data-scale="6">
+                <section id="read" class="hidden slide step">
                     <h1>FFF</h1>
                 </section>
-                <section id="result" class="hidden slide step" data-x="6300" data-y="2000" data-rotate="20" data-scale="4">
+                <section id="result" class="hidden slide step">
                     <div class="modal-bgOverlay"></div>
                     <section class="modalo">
                         <button class="md-close"><i>X</i></button>
@@ -196,7 +283,10 @@
     <script src="./libs/php_crud_api_transform.js"></script>
     <script src="app/js/jquery.backgroundpos.js "></script>
     <script src="app/js/modalEffects.js"></script>
+    <script src="app/js/modernizr.js"></script>
+    <script src="app/js/jquery.baraja.js"></script>
     <script src="app/js/app.js"></script>
+    <script src="app/js/tarot-draw.js"></script>
     <script>
         /* Vivus fx*/
         new Vivus('tarot-title', {
@@ -247,7 +337,7 @@
                     window.setTimeout(function () {
                         $div.remove();
                     }, 2000);
-                });
+            });
 
             });
 
@@ -259,98 +349,40 @@
         $('#intro').addClass('rotateCarouselLeftOut');
         $('#voyant').removeClass('hidden').addClass('rotateCarouselLeftIn');
         console.info('Switching scene (1->2)');
-        $('.parallax-tarot').animate({backgroundPosition: '-651px 0px'}, 700, 'swing');
+            $('.parallax-tarot').animate({
+                backgroundPosition: '-651px 0px'
+            }, 700, 'swing');
         });
         /*$('#voyant').click(function () {
-            $('#voyant').removeClass('rotateCarouselLeftIn').addClass('rotateSlideOut');
-                    $('#pick').removeClass('hidden').addClass('rotateSlideIn');
-                    $('.parallax-tarot').animate({backgroundPosition: '-1307px 0px'}, 700, 'swing');
-                }
-        );*/
-        $('#pick').click(function () {
-            $('#pick').removeClass('rotateSlideIn').addClass('moveToBottomFade');
-                    $('#draw').removeClass('hidden').addClass('moveFromTopFade');
-                    $('.parallax-tarot').animate({backgroundPosition: '-1307px -641px'}, 700, 'swing');
-                }
-        );
-        $('#draw').click(
-                function () {
-                    $('#draw').removeClass('rotateSlideIn').addClass('moveToBottomFade');
-                    $('#interpret').removeClass('hidden').addClass('moveFromTopFade');
-                    $('.parallax-tarot').animate({backgroundPosition: '-655px -641px'}, 700, 'swing');
-                }
-        );
-        $('#interpret').click(
-                function () {
-                    $('#interpret').removeClass('moveFromTopFade').addClass('moveToLeftFade');
-                    $('#read').removeClass('hidden').addClass('moveFromLeftFade');
-                    $('.parallax-tarot').animate({backgroundPosition: '-2px -641px'}, 700, 'swing');
-                }
-        );
+         $('#voyant').removeClass('rotateCarouselLeftIn').addClass('rotateSlideOut');
+         $('#pick').removeClass('hidden').addClass('rotateSlideIn');
+         $('.parallax-tarot').animate({backgroundPosition: '-1307px 0px'}, 700, 'swing');
+         }
+         );*/
+
+        //$('#draw').click(
+        //        function () {
+        //            $('#draw').removeClass('rotateSlideIn').addClass('moveToBottomFade');
+        //            $('#interpret').removeClass('hidden').addClass('moveFromTopFade');
+        //            $('.parallax-tarot').animate({backgroundPosition: '-655px -641px'}, 700, 'swing');
+        //        }
+        //);
+        //$('#interpret').click(
+        //        function () {
+        //            $('#interpret').removeClass('moveFromTopFade').addClass('moveToLeftFade');
+        //            $('#read').removeClass('hidden').addClass('moveFromLeftFade');
+        //            $('.parallax-tarot').animate({backgroundPosition: '-2px -641px'}, 700, 'swing');
+        //        }
+        //);
         $('#read').click(
                 function () {
                     $('#read').removeClass('moveFromLeftFade').addClass('moveToTopFade');
                     $('#result').removeClass('hidden').addClass('moveFromBottomFade');
-                    $('.parallax-tarot').animate({backgroundPosition: '0 0'}, 700, 'swing');
+                    $('.parallax-tarot').animate({
+                        backgroundPosition: '0 0'
+                    }, 700, 'swing');
                 }
         );
-        /* Parallax Bg*/
-
-
-        /*$(document).ready(function() {
-         var movementStrength = 125;
-         var height = movementStrength / $(window).height();
-         var width = movementStrength / $(window).width();
-         $(".parallax-tarot").mousemove(function(e){
-         var pageX = e.pageX - ($(window).width() / 2);
-         var pageY = e.pageY - ($(window).height() / 2);
-         var newvalueX = width * pageX * -1 - 25;
-         var newvalueY = height * pageY * -1 - 50;
-         $('.parallax-tarot').css("background-position", newvalueX+"px     "+newvalueY+"px");
-         });
-         });*/
-        /*var $div = $("#voyant");
-         var observer = new MutationObserver(function(mutations) {
-         mutations.forEach(function(mutation) {
-         if (mutation.attributeName === "class") {
-         var attributeValue = $(mutation.target).prop(mutation.attributeName);
-         console.log("Class attribute changed to:", attributeValue);
-         }
-         });
-         });
-         observer.observe($div[0],  {
-         attributes: true
-         });
-         */
-        // create an observer instance
-        /* var observer = new MutationObserver(function (mutations) {
-            mutations.forEach(function (mutation) {
-                var attriName = mutation.attributeName;
-                if (attriName === "class") {
-                    var attributeValue = $(mutation.target).prop(attriName);
-                    console.log(attriName, "changed to:", attributeValue);
-                    $(".parallax-tarot").toggleClass('on');
-                }
-            });
-        });
-
-        // configuration of the observer:
-        var config = {
-            attributes: true
-        };
-
-        // pass in the target node, as well as the observer options
-
-        // later, you can stop observing
-        observer.disconnect();
-
-        observer.observe($('#intro')[0], config);
-        observer.observe($('#voyant')[0], config);
-        observer.observe($('#pick')[0], config);
-        observer.observe($('#draw')[0], config);
-        observer.observe($('#interpret')[0], config);
-        observer.observe($('#read')[0], config);
-         observer.observe($('#resault')[0], config); */
 
 
         $(document).on('change, click', 'input[name="insc"]', function (e) {
@@ -360,21 +392,93 @@
                 $('.con').removeClass('hidden').addClass('moveFromLeft');
             }, 0);
         });
-        $(function(){
-            var i = 0;
-            $(".shuffle").click(function(){
-                $("li")
-                        .animate({left: 15+"%", marginTop: 2+"em"},500, "easeOutBack",function(){i--;$(this).css("z-index", i)})
-                        .animate({left: 38+"%", marginTop: 0+"em"},500, "easeOutBack");
+        var changeStepsvp;
+        function changeStepsvp() {
+            setTimeout(function () {
+
+
                 $('#voyant').removeClass('rotateCarouselLeftIn').addClass('rotateSlideOut');
                 $('#pick').removeClass('hidden').addClass('rotateSlideIn');
-                $('.parallax-tarot').animate({backgroundPosition: '-1307px 0px'}, 700, 'swing');
 
+            }, 2000);
+
+        }
+        $(function () {
+
+
+            var $el = $('#baraja-el'),
+                    baraja = $el.baraja();
+
+            // more realistic fan: without common origin (means the origin changes / increments by card )
+
+            $('#baraja-el').on('click', function (event) {
+                baraja.fan({
+                    speed: 500,
+                    easing: 'ease-out',
+                    range: 90,
+                    direction: 'right',
+                    origin: {
+                        minX: 20,
+                        maxX: 80,
+                        y: 100
+                    },
+                    center: true,
+                    translation: 60
+            });
+                $.when($('.parallax-tarot').animate({
+                    backgroundPosition: '-1307px 0px'
+                }, 700, 'swing')).then(changeStepsvp());
+
+        });
+            $('#baraja-el2').on('click', function (event) {
+                baraja.close(false);
+            });
+            //var i = 0;
+            //$(".shuffle").click(function(){
+            //    $("li")
+            //            .animate({left: 15+"%", marginTop: 2+"em"},500, "easeOutBack",function(){i--;$(this).css("z-index", i)})
+            //            .animate({left: 38+"%", marginTop: 0+"em"},500, "easeOutBack");
+            //    $('#voyant').removeClass('rotateCarouselLeftIn').addClass('rotateSlideOut');
+            //    $('#pick').removeClass('hidden').addClass('rotateSlideIn');
+            //    $('.parallax-tarot').animate({backgroundPosition: '-1307px 0px'}, 700, 'swing');
+            //
+            //});
+
+            $(document).on('trt_completed_event', function (e) {
+                setTimeout(function () {
+                    console.log("Cards Pick Completed   ");
+                    $('#pick').removeClass('rotateSlideIn').addClass('moveToBottomFade');
+                    $('#draw').removeClass('hidden').addClass('moveFromTopFade');
+                    $('.parallax-tarot').animate({backgroundPosition: '-1307px -641px'}, 700, 'swing');
+
+                }, 800);
             });
         });
+
         document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
     </script>
+    <!--script>
+        $(function() {
+            var $el = $( '#baraja-el' ),
+                    baraja = $el.baraja();
 
+            // more realistic fan: without common origin (means the origin changes / increments by card )
+            $( '#baraja-el' ).on( 'click', function( event ) {
+                baraja.fan( {
+                    speed : 500,
+                    easing : 'ease-out',
+                    range : 90,
+                    direction : 'right',
+                    origin : { minX : 20, maxX : 80, y : 100 },
+                    center : true,
+                    translation : 60
+                } );
+
+            } );
+
+
+        });
+    </script-->
 </body>
 
 </html>

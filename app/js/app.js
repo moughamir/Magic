@@ -65,7 +65,6 @@ $(document).ready(function() {
         sfxOne.play();
         console.log("Init Audio Two");
     }
-    ;
     /*
      * Let's go to full screen mode
      * */
@@ -83,22 +82,22 @@ $(document).ready(function() {
 
         $.fn.shuffle = function() {
 
-            var elements = this.get()
-            var copy = [].concat(elements)
-            var shuffled = []
-            var placeholders = []
+            var elements = this.get();
+            var copy = [].concat(elements);
+            var shuffled = [];
+            var placeholders = [];
 
             // Shuffle the element array
             while (copy.length) {
-                var rand = Math.floor(Math.random() * copy.length)
-                var element = copy.splice(rand,1)[0]
+                var rand = Math.floor(Math.random() * copy.length);
+                var element = copy.splice(rand, 1)[0];
                 shuffled.push(element)
             }
 
             // replace all elements with a plcaceholder
             for (var i = 0; i < elements.length; i++) {
-                var placeholder = document.createTextNode('')
-                findAndReplace(elements[i], placeholder)
+                var placeholder = document.createTextNode('');
+                findAndReplace(elements[i], placeholder);
                 placeholders.push(placeholder)
             }
 
@@ -109,7 +108,7 @@ $(document).ready(function() {
 
             return $(shuffled)
 
-        }
+        };
 
         function findAndReplace(find, replace) {
             find.parentNode.replaceChild(replace, find)
@@ -212,6 +211,25 @@ app = angular.module("myApplication", ["ngSanitize"])
         $scope.saySomething = function () {
             console.log("Click Click");
         };
+        /*
+         * API Call
+         *
+         * @description: get JSON data of specific element
+         * @author: Mohamed Moughamir <moughamir@gmail.com>
+         * @site: http://omnizya.com/
+         * @api: http://myastro.dev/tarot-g/api.php/tarot/
+         * @param: ?filter=value,eq,[i]
+         * @return: id, title, value, reading
+         * s
+         * */
+        var cardId;
+        var param = "?filter=value,eq,";
+        $scope.getCard = function (cardId) {
+            $http.get(cards + param + cardId).success(function (cardData) {
+                $scope.card = cardData;
+
+            });
+        };
+
     }]);
 
-//

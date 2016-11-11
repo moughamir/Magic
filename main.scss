@@ -170,7 +170,7 @@ button {
     width: 100% !important;
     height: 100% !important;
   background: #FF8686 url(../images/prototype-2.png) 0px -1px no-repeat;
-  animation: bgAnimate 1800ms ease;
+
 }
 
 @keyframes bgAnimate {
@@ -195,6 +195,7 @@ h1 {
     height: $c-h;
     /* background: #27586B; */
     position: absolute;
+  overflow: hidden;
 }
 
 .utils {
@@ -207,6 +208,21 @@ h1 {
 
 #voyant {
     z-index: 98;
+  .invitaion {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    font-family: 'Lobster Two', cursive;
+    line-height: 22px;
+    text-align: center;
+    text-shadow: 1px 1px #3c3c3c;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.12);
+  }
 }
 
 #pick {
@@ -215,6 +231,9 @@ h1 {
 
 #draw {
     z-index: 96;
+  isplay: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #interpret {
@@ -669,8 +688,9 @@ img.titre-mini {
   z-index: 10;
   transform: translate(-50%);
 }
-aside.cards.shuffle {
-  width: 100%;
+
+.cards.shuffle {
+  width: 43%;
   height: 188px;
   display: flex;
   justify-content: center;
@@ -691,3 +711,197 @@ aside.cards.shuffle {
   }
 }
 @import "sass/colibri";
+$dos_carte: "../images/major/backface.png";
+$place_carte: "../images/major/backface.png";
+#scn-tarot {
+  &-draw {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &-result {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 1px #353535;
+    background: rgba(53, 53, 53, 0.15);
+  }
+}
+
+// Baraja Maker
+@mixin baraja($items-count, $arc, $deg) {
+  $t: $arc / $items-count;
+  $rot: $deg/2;
+  @for $i from 1 through $items-count {
+    &:nth-of-type(#{$i}) {
+      transform-origin: 60% 450% 0;
+      z-index: 99 - $i;
+      transform: translate($arc -($t*$i)) rotate(($deg - ($rot)) - (($i)*2));
+      left: $i * 10px;
+
+      &:hover {
+        transform: translate((($arc -($t*$i))+10), -15px) rotate(($deg - ($rot)) - (($i)*2));
+        filter: drop-shadow(0 0 2px #000);
+      }
+    }
+  }
+}
+
+.WidgetTarot {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  &-Result {
+    height: 231px;
+    width: 510px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &-Card {
+
+    &.notFlipped {
+      width: calc(247px / 2.5);
+      height: calc(412px / 2.5);
+      position: absolute;
+      transition: transform 300ms ease-out 0ms;
+      @include baraja(22, 200px, 49deg);
+      filter: drop-shadow(0 0 1px #000);
+      &:hover {
+        filter: drop-shadow(0 0 2px #000);
+      }
+    }
+
+    &-Face.front {
+      border: none;
+      background: transparent url($dos_carte) center no-repeat;
+      background-size: cover;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    &-Face.back {
+      border: none;
+      background-color: transparent;
+    }
+
+    &.place {
+      background-color: transparent;
+      background-image: url($place_carte);
+      border-radius: 6px;
+      width: calc(247px / 2);
+      height: calc(412px / 2);
+      display: inline-block;
+      background-size: cover;
+      margin: 5px;
+    }
+  }
+
+  &-ResultMsg {
+    font-weight: bold;
+    color: #8387dd;
+  }
+}
+
+#baraja-el2 {
+
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-43%);
+  top: 142px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  &Slide {
+    width: 620px;
+    height: 402px;
+    position: relative;
+    top: 50%;
+    margin: 5px auto;
+    transform: translateY(-50%);
+
+  }
+  &Info {
+    height: 400px;
+    position: absolute;
+    background: rgba(253, 253, 253, 0.22);
+    width: 100%;
+
+  }
+
+}
+
+//.InforContainer {
+//  display: flex;
+//  flex-direction: row-reverse;
+//  justify-content: center;
+//  align-items: center;
+//}
+.CardInfoHeader {
+  width: 100%;
+  height: 40px;
+  background: rgba(253, 253, 253, 0.22);
+  position: absolute;
+  top: -45px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 1px 2px rgba(80, 80, 80, 0.2);
+}
+
+.MetaInfo {
+  height: 400px;
+  width: 218px;
+  position: relative;
+  background: rgba(253, 253, 253, 0.22);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  right: 0;
+  display: inline-block;
+  float: left;
+  & > footer {
+    background: transparent;
+    border-top: 1px solid rgba(0, 0, 0, 0.22);
+    height: 46px;
+    width: 218px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    & * {
+      width: 42px;
+      height: 42px;
+    }
+  }
+}
+
+.cardImg {
+  height: 340px;
+  display: block;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+  top: 4px;
+  border: 3px solid #fff;
+  border-radius: 3px;
+}
+
+.paragraph {
+  width: 370px;
+  display: inline-block;
+  float: right;
+  right: 15px;
+  top: 200px;
+  position: relative;
+  transform: translateY(-100px);
+}

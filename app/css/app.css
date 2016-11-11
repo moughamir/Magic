@@ -1799,9 +1799,7 @@ button {
   position: absolute;
   width: 100% !important;
   height: 100% !important;
-  background: #FF8686 url(../images/prototype-2.png) 0px -1px no-repeat;
-  -webkit-animation: bgAnimate 1800ms ease;
-          animation: bgAnimate 1800ms ease; }
+  background: #FF8686 url(../images/prototype-2.png) 0px -1px no-repeat; }
 
 @-webkit-keyframes bgAnimate {
   0% {
@@ -1832,7 +1830,8 @@ h1 {
   width: 652px;
   height: 640px;
   /* background: #27586B; */
-  position: absolute; }
+  position: absolute;
+  overflow: hidden; }
 
 .utils {
   z-index: 100; }
@@ -1842,12 +1841,48 @@ h1 {
 
 #voyant {
   z-index: 98; }
+  #voyant .invitaion {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: #fff;
+    font-family: 'Lobster Two', cursive;
+    line-height: 22px;
+    text-align: center;
+    text-shadow: 1px 1px #3c3c3c;
+    font-size: 18px;
+    background: rgba(0, 0, 0, 0.12); }
 
 #pick {
   z-index: 97; }
 
 #draw {
-  z-index: 96; }
+  z-index: 96;
+  isplay: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
 #interpret {
   z-index: 95; }
@@ -2436,8 +2471,8 @@ img.titre-mini {
       -ms-transform: translate(-50%);
           transform: translate(-50%); }
 
-aside.cards.shuffle {
-  width: 100%;
+.cards.shuffle {
+  width: 43%;
   height: 188px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2454,7 +2489,7 @@ aside.cards.shuffle {
   top: 60%;
   position: absolute;
   list-style: none; }
-  aside.cards.shuffle .cardC:nth-of-type(1) {
+  .cards.shuffle .cardC:nth-of-type(1) {
     /* transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg); */
     /*z-index: 100 - $i;*/
     left: -2px !important;
@@ -2463,7 +2498,7 @@ aside.cards.shuffle {
     -webkit-transform: translate(250%);
         -ms-transform: translate(250%);
             transform: translate(250%); }
-  aside.cards.shuffle .cardC:nth-of-type(2) {
+  .cards.shuffle .cardC:nth-of-type(2) {
     /* transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg); */
     /*z-index: 100 - $i;*/
     left: -5px !important;
@@ -2472,7 +2507,7 @@ aside.cards.shuffle {
     -webkit-transform: translate(250%);
         -ms-transform: translate(250%);
             transform: translate(250%); }
-  aside.cards.shuffle .cardC:nth-of-type(3) {
+  .cards.shuffle .cardC:nth-of-type(3) {
     /* transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg); */
     /*z-index: 100 - $i;*/
     left: -8px !important;
@@ -2481,7 +2516,7 @@ aside.cards.shuffle {
     -webkit-transform: translate(250%);
         -ms-transform: translate(250%);
             transform: translate(250%); }
-  aside.cards.shuffle .cardC:nth-of-type(4) {
+  .cards.shuffle .cardC:nth-of-type(4) {
     /* transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg); */
     /*z-index: 100 - $i;*/
     left: -11px !important;
@@ -2490,7 +2525,7 @@ aside.cards.shuffle {
     -webkit-transform: translate(250%);
         -ms-transform: translate(250%);
             transform: translate(250%); }
-  aside.cards.shuffle .cardC:nth-of-type(5) {
+  .cards.shuffle .cardC:nth-of-type(5) {
     /* transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg); */
     /*z-index: 100 - $i;*/
     left: -14px !important;
@@ -2499,7 +2534,7 @@ aside.cards.shuffle {
     -webkit-transform: translate(250%);
         -ms-transform: translate(250%);
             transform: translate(250%); }
-  aside.cards.shuffle .cardC:nth-of-type(6) {
+  .cards.shuffle .cardC:nth-of-type(6) {
     /* transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg); */
     /*z-index: 100 - $i;*/
     left: -17px !important;
@@ -2508,7 +2543,7 @@ aside.cards.shuffle {
     -webkit-transform: translate(250%);
         -ms-transform: translate(250%);
             transform: translate(250%); }
-  aside.cards.shuffle .cardC:nth-of-type(7) {
+  .cards.shuffle .cardC:nth-of-type(7) {
     /* transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg); */
     /*z-index: 100 - $i;*/
     left: -20px !important;
@@ -2517,7 +2552,7 @@ aside.cards.shuffle {
     -webkit-transform: translate(250%);
         -ms-transform: translate(250%);
             transform: translate(250%); }
-  aside.cards.shuffle .cardC:nth-of-type(8) {
+  .cards.shuffle .cardC:nth-of-type(8) {
     /* transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg); */
     /*z-index: 100 - $i;*/
     left: -23px !important;
@@ -2526,7 +2561,7 @@ aside.cards.shuffle {
     -webkit-transform: translate(250%);
         -ms-transform: translate(250%);
             transform: translate(250%); }
-  aside.cards.shuffle .cardC:nth-of-type(9) {
+  .cards.shuffle .cardC:nth-of-type(9) {
     /* transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg); */
     /*z-index: 100 - $i;*/
     left: -26px !important;
@@ -2535,7 +2570,7 @@ aside.cards.shuffle {
     -webkit-transform: translate(250%);
         -ms-transform: translate(250%);
             transform: translate(250%); }
-  aside.cards.shuffle .cardC:nth-of-type(10) {
+  .cards.shuffle .cardC:nth-of-type(10) {
     /* transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg); */
     /*z-index: 100 - $i;*/
     left: -29px !important;
@@ -2544,7 +2579,7 @@ aside.cards.shuffle {
     -webkit-transform: translate(250%);
         -ms-transform: translate(250%);
             transform: translate(250%); }
-  aside.cards.shuffle .cardC:nth-of-type(11) {
+  .cards.shuffle .cardC:nth-of-type(11) {
     /* transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg); */
     /*z-index: 100 - $i;*/
     left: -32px !important;
@@ -2553,7 +2588,7 @@ aside.cards.shuffle {
     -webkit-transform: translate(250%);
         -ms-transform: translate(250%);
             transform: translate(250%); }
-  aside.cards.shuffle .cardC:nth-of-type(12) {
+  .cards.shuffle .cardC:nth-of-type(12) {
     /* transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg); */
     /*z-index: 100 - $i;*/
     left: -35px !important;
@@ -2562,7 +2597,7 @@ aside.cards.shuffle {
     -webkit-transform: translate(250%);
         -ms-transform: translate(250%);
             transform: translate(250%); }
-  aside.cards.shuffle .cardC:nth-of-type(13) {
+  .cards.shuffle .cardC:nth-of-type(13) {
     /* transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg); */
     /*z-index: 100 - $i;*/
     left: -38px !important;
@@ -2571,7 +2606,7 @@ aside.cards.shuffle {
     -webkit-transform: translate(250%);
         -ms-transform: translate(250%);
             transform: translate(250%); }
-  aside.cards.shuffle .cardC:nth-of-type(14) {
+  .cards.shuffle .cardC:nth-of-type(14) {
     /* transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg); */
     /*z-index: 100 - $i;*/
     left: -41px !important;
@@ -2580,7 +2615,7 @@ aside.cards.shuffle {
     -webkit-transform: translate(250%);
         -ms-transform: translate(250%);
             transform: translate(250%); }
-  aside.cards.shuffle .cardC:nth-of-type(15) {
+  .cards.shuffle .cardC:nth-of-type(15) {
     /* transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg); */
     /*z-index: 100 - $i;*/
     left: -44px !important;
@@ -2589,7 +2624,7 @@ aside.cards.shuffle {
     -webkit-transform: translate(250%);
         -ms-transform: translate(250%);
             transform: translate(250%); }
-  aside.cards.shuffle .cardC:nth-of-type(16) {
+  .cards.shuffle .cardC:nth-of-type(16) {
     /* transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg); */
     /*z-index: 100 - $i;*/
     left: -47px !important;
@@ -2598,7 +2633,7 @@ aside.cards.shuffle {
     -webkit-transform: translate(250%);
         -ms-transform: translate(250%);
             transform: translate(250%); }
-  aside.cards.shuffle .cardC:nth-of-type(17) {
+  .cards.shuffle .cardC:nth-of-type(17) {
     /* transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg); */
     /*z-index: 100 - $i;*/
     left: -50px !important;
@@ -2607,7 +2642,7 @@ aside.cards.shuffle {
     -webkit-transform: translate(250%);
         -ms-transform: translate(250%);
             transform: translate(250%); }
-  aside.cards.shuffle .cardC:nth-of-type(18) {
+  .cards.shuffle .cardC:nth-of-type(18) {
     /* transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg); */
     /*z-index: 100 - $i;*/
     left: -53px !important;
@@ -2616,7 +2651,7 @@ aside.cards.shuffle {
     -webkit-transform: translate(250%);
         -ms-transform: translate(250%);
             transform: translate(250%); }
-  aside.cards.shuffle .cardC:nth-of-type(19) {
+  .cards.shuffle .cardC:nth-of-type(19) {
     /* transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg); */
     /*z-index: 100 - $i;*/
     left: -56px !important;
@@ -2625,7 +2660,7 @@ aside.cards.shuffle {
     -webkit-transform: translate(250%);
         -ms-transform: translate(250%);
             transform: translate(250%); }
-  aside.cards.shuffle .cardC:nth-of-type(20) {
+  .cards.shuffle .cardC:nth-of-type(20) {
     /* transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg); */
     /*z-index: 100 - $i;*/
     left: -59px !important;
@@ -2634,7 +2669,7 @@ aside.cards.shuffle {
     -webkit-transform: translate(250%);
         -ms-transform: translate(250%);
             transform: translate(250%); }
-  aside.cards.shuffle .cardC:nth-of-type(21) {
+  .cards.shuffle .cardC:nth-of-type(21) {
     /* transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg); */
     /*z-index: 100 - $i;*/
     left: -62px !important;
@@ -2643,7 +2678,7 @@ aside.cards.shuffle {
     -webkit-transform: translate(250%);
         -ms-transform: translate(250%);
             transform: translate(250%); }
-  aside.cards.shuffle .cardC:nth-of-type(22) {
+  .cards.shuffle .cardC:nth-of-type(22) {
     /* transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg); */
     /*z-index: 100 - $i;*/
     left: -65px !important;
@@ -2794,5 +2829,526 @@ aside.cards.shuffle {
   100% {
     -webkit-transform: translate(-10%, 10%);
             transform: translate(-10%, 10%); } }
+#scn-tarot-draw {
+  width: 100%;
+  height: 300px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+#scn-tarot-result {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+      -ms-transform: translate(-50%);
+          transform: translate(-50%);
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  box-shadow: 0 0 1px #353535;
+  background: rgba(53, 53, 53, 0.15); }
+
+.WidgetTarot {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+  .WidgetTarot-Result {
+    height: 231px;
+    width: 510px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .WidgetTarot-Card.notFlipped {
+    width: calc(247px / 2.5);
+    height: calc(412px / 2.5);
+    position: absolute;
+    -webkit-transition: -webkit-transform 300ms ease-out 0ms;
+            transition: transform 300ms ease-out 0ms;
+    -webkit-filter: drop-shadow(0 0 1px #000);
+            filter: drop-shadow(0 0 1px #000); }
+    .WidgetTarot-Card.notFlipped:nth-of-type(1) {
+      -webkit-transform-origin: 60% 450% 0;
+          -ms-transform-origin: 60% 450% 0;
+              transform-origin: 60% 450% 0;
+      z-index: 98;
+      -webkit-transform: translate(190.90909px) rotate(22.5deg);
+          -ms-transform: translate(190.90909px) rotate(22.5deg);
+              transform: translate(190.90909px) rotate(22.5deg);
+      left: 10px; }
+      .WidgetTarot-Card.notFlipped:nth-of-type(1):hover {
+        -webkit-transform: translate(200.90909px, -15px) rotate(22.5deg);
+            -ms-transform: translate(200.90909px, -15px) rotate(22.5deg);
+                transform: translate(200.90909px, -15px) rotate(22.5deg);
+        -webkit-filter: drop-shadow(0 0 2px #000);
+                filter: drop-shadow(0 0 2px #000); }
+    .WidgetTarot-Card.notFlipped:nth-of-type(2) {
+      -webkit-transform-origin: 60% 450% 0;
+          -ms-transform-origin: 60% 450% 0;
+              transform-origin: 60% 450% 0;
+      z-index: 97;
+      -webkit-transform: translate(181.81818px) rotate(20.5deg);
+          -ms-transform: translate(181.81818px) rotate(20.5deg);
+              transform: translate(181.81818px) rotate(20.5deg);
+      left: 20px; }
+      .WidgetTarot-Card.notFlipped:nth-of-type(2):hover {
+        -webkit-transform: translate(191.81818px, -15px) rotate(20.5deg);
+            -ms-transform: translate(191.81818px, -15px) rotate(20.5deg);
+                transform: translate(191.81818px, -15px) rotate(20.5deg);
+        -webkit-filter: drop-shadow(0 0 2px #000);
+                filter: drop-shadow(0 0 2px #000); }
+    .WidgetTarot-Card.notFlipped:nth-of-type(3) {
+      -webkit-transform-origin: 60% 450% 0;
+          -ms-transform-origin: 60% 450% 0;
+              transform-origin: 60% 450% 0;
+      z-index: 96;
+      -webkit-transform: translate(172.72727px) rotate(18.5deg);
+          -ms-transform: translate(172.72727px) rotate(18.5deg);
+              transform: translate(172.72727px) rotate(18.5deg);
+      left: 30px; }
+      .WidgetTarot-Card.notFlipped:nth-of-type(3):hover {
+        -webkit-transform: translate(182.72727px, -15px) rotate(18.5deg);
+            -ms-transform: translate(182.72727px, -15px) rotate(18.5deg);
+                transform: translate(182.72727px, -15px) rotate(18.5deg);
+        -webkit-filter: drop-shadow(0 0 2px #000);
+                filter: drop-shadow(0 0 2px #000); }
+    .WidgetTarot-Card.notFlipped:nth-of-type(4) {
+      -webkit-transform-origin: 60% 450% 0;
+          -ms-transform-origin: 60% 450% 0;
+              transform-origin: 60% 450% 0;
+      z-index: 95;
+      -webkit-transform: translate(163.63636px) rotate(16.5deg);
+          -ms-transform: translate(163.63636px) rotate(16.5deg);
+              transform: translate(163.63636px) rotate(16.5deg);
+      left: 40px; }
+      .WidgetTarot-Card.notFlipped:nth-of-type(4):hover {
+        -webkit-transform: translate(173.63636px, -15px) rotate(16.5deg);
+            -ms-transform: translate(173.63636px, -15px) rotate(16.5deg);
+                transform: translate(173.63636px, -15px) rotate(16.5deg);
+        -webkit-filter: drop-shadow(0 0 2px #000);
+                filter: drop-shadow(0 0 2px #000); }
+    .WidgetTarot-Card.notFlipped:nth-of-type(5) {
+      -webkit-transform-origin: 60% 450% 0;
+          -ms-transform-origin: 60% 450% 0;
+              transform-origin: 60% 450% 0;
+      z-index: 94;
+      -webkit-transform: translate(154.54545px) rotate(14.5deg);
+          -ms-transform: translate(154.54545px) rotate(14.5deg);
+              transform: translate(154.54545px) rotate(14.5deg);
+      left: 50px; }
+      .WidgetTarot-Card.notFlipped:nth-of-type(5):hover {
+        -webkit-transform: translate(164.54545px, -15px) rotate(14.5deg);
+            -ms-transform: translate(164.54545px, -15px) rotate(14.5deg);
+                transform: translate(164.54545px, -15px) rotate(14.5deg);
+        -webkit-filter: drop-shadow(0 0 2px #000);
+                filter: drop-shadow(0 0 2px #000); }
+    .WidgetTarot-Card.notFlipped:nth-of-type(6) {
+      -webkit-transform-origin: 60% 450% 0;
+          -ms-transform-origin: 60% 450% 0;
+              transform-origin: 60% 450% 0;
+      z-index: 93;
+      -webkit-transform: translate(145.45455px) rotate(12.5deg);
+          -ms-transform: translate(145.45455px) rotate(12.5deg);
+              transform: translate(145.45455px) rotate(12.5deg);
+      left: 60px; }
+      .WidgetTarot-Card.notFlipped:nth-of-type(6):hover {
+        -webkit-transform: translate(155.45455px, -15px) rotate(12.5deg);
+            -ms-transform: translate(155.45455px, -15px) rotate(12.5deg);
+                transform: translate(155.45455px, -15px) rotate(12.5deg);
+        -webkit-filter: drop-shadow(0 0 2px #000);
+                filter: drop-shadow(0 0 2px #000); }
+    .WidgetTarot-Card.notFlipped:nth-of-type(7) {
+      -webkit-transform-origin: 60% 450% 0;
+          -ms-transform-origin: 60% 450% 0;
+              transform-origin: 60% 450% 0;
+      z-index: 92;
+      -webkit-transform: translate(136.36364px) rotate(10.5deg);
+          -ms-transform: translate(136.36364px) rotate(10.5deg);
+              transform: translate(136.36364px) rotate(10.5deg);
+      left: 70px; }
+      .WidgetTarot-Card.notFlipped:nth-of-type(7):hover {
+        -webkit-transform: translate(146.36364px, -15px) rotate(10.5deg);
+            -ms-transform: translate(146.36364px, -15px) rotate(10.5deg);
+                transform: translate(146.36364px, -15px) rotate(10.5deg);
+        -webkit-filter: drop-shadow(0 0 2px #000);
+                filter: drop-shadow(0 0 2px #000); }
+    .WidgetTarot-Card.notFlipped:nth-of-type(8) {
+      -webkit-transform-origin: 60% 450% 0;
+          -ms-transform-origin: 60% 450% 0;
+              transform-origin: 60% 450% 0;
+      z-index: 91;
+      -webkit-transform: translate(127.27273px) rotate(8.5deg);
+          -ms-transform: translate(127.27273px) rotate(8.5deg);
+              transform: translate(127.27273px) rotate(8.5deg);
+      left: 80px; }
+      .WidgetTarot-Card.notFlipped:nth-of-type(8):hover {
+        -webkit-transform: translate(137.27273px, -15px) rotate(8.5deg);
+            -ms-transform: translate(137.27273px, -15px) rotate(8.5deg);
+                transform: translate(137.27273px, -15px) rotate(8.5deg);
+        -webkit-filter: drop-shadow(0 0 2px #000);
+                filter: drop-shadow(0 0 2px #000); }
+    .WidgetTarot-Card.notFlipped:nth-of-type(9) {
+      -webkit-transform-origin: 60% 450% 0;
+          -ms-transform-origin: 60% 450% 0;
+              transform-origin: 60% 450% 0;
+      z-index: 90;
+      -webkit-transform: translate(118.18182px) rotate(6.5deg);
+          -ms-transform: translate(118.18182px) rotate(6.5deg);
+              transform: translate(118.18182px) rotate(6.5deg);
+      left: 90px; }
+      .WidgetTarot-Card.notFlipped:nth-of-type(9):hover {
+        -webkit-transform: translate(128.18182px, -15px) rotate(6.5deg);
+            -ms-transform: translate(128.18182px, -15px) rotate(6.5deg);
+                transform: translate(128.18182px, -15px) rotate(6.5deg);
+        -webkit-filter: drop-shadow(0 0 2px #000);
+                filter: drop-shadow(0 0 2px #000); }
+    .WidgetTarot-Card.notFlipped:nth-of-type(10) {
+      -webkit-transform-origin: 60% 450% 0;
+          -ms-transform-origin: 60% 450% 0;
+              transform-origin: 60% 450% 0;
+      z-index: 89;
+      -webkit-transform: translate(109.09091px) rotate(4.5deg);
+          -ms-transform: translate(109.09091px) rotate(4.5deg);
+              transform: translate(109.09091px) rotate(4.5deg);
+      left: 100px; }
+      .WidgetTarot-Card.notFlipped:nth-of-type(10):hover {
+        -webkit-transform: translate(119.09091px, -15px) rotate(4.5deg);
+            -ms-transform: translate(119.09091px, -15px) rotate(4.5deg);
+                transform: translate(119.09091px, -15px) rotate(4.5deg);
+        -webkit-filter: drop-shadow(0 0 2px #000);
+                filter: drop-shadow(0 0 2px #000); }
+    .WidgetTarot-Card.notFlipped:nth-of-type(11) {
+      -webkit-transform-origin: 60% 450% 0;
+          -ms-transform-origin: 60% 450% 0;
+              transform-origin: 60% 450% 0;
+      z-index: 88;
+      -webkit-transform: translate(100.0px) rotate(2.5deg);
+          -ms-transform: translate(100.0px) rotate(2.5deg);
+              transform: translate(100.0px) rotate(2.5deg);
+      left: 110px; }
+      .WidgetTarot-Card.notFlipped:nth-of-type(11):hover {
+        -webkit-transform: translate(110.0px, -15px) rotate(2.5deg);
+            -ms-transform: translate(110.0px, -15px) rotate(2.5deg);
+                transform: translate(110.0px, -15px) rotate(2.5deg);
+        -webkit-filter: drop-shadow(0 0 2px #000);
+                filter: drop-shadow(0 0 2px #000); }
+    .WidgetTarot-Card.notFlipped:nth-of-type(12) {
+      -webkit-transform-origin: 60% 450% 0;
+          -ms-transform-origin: 60% 450% 0;
+              transform-origin: 60% 450% 0;
+      z-index: 87;
+      -webkit-transform: translate(90.90909px) rotate(0.5deg);
+          -ms-transform: translate(90.90909px) rotate(0.5deg);
+              transform: translate(90.90909px) rotate(0.5deg);
+      left: 120px; }
+      .WidgetTarot-Card.notFlipped:nth-of-type(12):hover {
+        -webkit-transform: translate(100.90909px, -15px) rotate(0.5deg);
+            -ms-transform: translate(100.90909px, -15px) rotate(0.5deg);
+                transform: translate(100.90909px, -15px) rotate(0.5deg);
+        -webkit-filter: drop-shadow(0 0 2px #000);
+                filter: drop-shadow(0 0 2px #000); }
+    .WidgetTarot-Card.notFlipped:nth-of-type(13) {
+      -webkit-transform-origin: 60% 450% 0;
+          -ms-transform-origin: 60% 450% 0;
+              transform-origin: 60% 450% 0;
+      z-index: 86;
+      -webkit-transform: translate(81.81818px) rotate(-1.5deg);
+          -ms-transform: translate(81.81818px) rotate(-1.5deg);
+              transform: translate(81.81818px) rotate(-1.5deg);
+      left: 130px; }
+      .WidgetTarot-Card.notFlipped:nth-of-type(13):hover {
+        -webkit-transform: translate(91.81818px, -15px) rotate(-1.5deg);
+            -ms-transform: translate(91.81818px, -15px) rotate(-1.5deg);
+                transform: translate(91.81818px, -15px) rotate(-1.5deg);
+        -webkit-filter: drop-shadow(0 0 2px #000);
+                filter: drop-shadow(0 0 2px #000); }
+    .WidgetTarot-Card.notFlipped:nth-of-type(14) {
+      -webkit-transform-origin: 60% 450% 0;
+          -ms-transform-origin: 60% 450% 0;
+              transform-origin: 60% 450% 0;
+      z-index: 85;
+      -webkit-transform: translate(72.72727px) rotate(-3.5deg);
+          -ms-transform: translate(72.72727px) rotate(-3.5deg);
+              transform: translate(72.72727px) rotate(-3.5deg);
+      left: 140px; }
+      .WidgetTarot-Card.notFlipped:nth-of-type(14):hover {
+        -webkit-transform: translate(82.72727px, -15px) rotate(-3.5deg);
+            -ms-transform: translate(82.72727px, -15px) rotate(-3.5deg);
+                transform: translate(82.72727px, -15px) rotate(-3.5deg);
+        -webkit-filter: drop-shadow(0 0 2px #000);
+                filter: drop-shadow(0 0 2px #000); }
+    .WidgetTarot-Card.notFlipped:nth-of-type(15) {
+      -webkit-transform-origin: 60% 450% 0;
+          -ms-transform-origin: 60% 450% 0;
+              transform-origin: 60% 450% 0;
+      z-index: 84;
+      -webkit-transform: translate(63.63636px) rotate(-5.5deg);
+          -ms-transform: translate(63.63636px) rotate(-5.5deg);
+              transform: translate(63.63636px) rotate(-5.5deg);
+      left: 150px; }
+      .WidgetTarot-Card.notFlipped:nth-of-type(15):hover {
+        -webkit-transform: translate(73.63636px, -15px) rotate(-5.5deg);
+            -ms-transform: translate(73.63636px, -15px) rotate(-5.5deg);
+                transform: translate(73.63636px, -15px) rotate(-5.5deg);
+        -webkit-filter: drop-shadow(0 0 2px #000);
+                filter: drop-shadow(0 0 2px #000); }
+    .WidgetTarot-Card.notFlipped:nth-of-type(16) {
+      -webkit-transform-origin: 60% 450% 0;
+          -ms-transform-origin: 60% 450% 0;
+              transform-origin: 60% 450% 0;
+      z-index: 83;
+      -webkit-transform: translate(54.54545px) rotate(-7.5deg);
+          -ms-transform: translate(54.54545px) rotate(-7.5deg);
+              transform: translate(54.54545px) rotate(-7.5deg);
+      left: 160px; }
+      .WidgetTarot-Card.notFlipped:nth-of-type(16):hover {
+        -webkit-transform: translate(64.54545px, -15px) rotate(-7.5deg);
+            -ms-transform: translate(64.54545px, -15px) rotate(-7.5deg);
+                transform: translate(64.54545px, -15px) rotate(-7.5deg);
+        -webkit-filter: drop-shadow(0 0 2px #000);
+                filter: drop-shadow(0 0 2px #000); }
+    .WidgetTarot-Card.notFlipped:nth-of-type(17) {
+      -webkit-transform-origin: 60% 450% 0;
+          -ms-transform-origin: 60% 450% 0;
+              transform-origin: 60% 450% 0;
+      z-index: 82;
+      -webkit-transform: translate(45.45455px) rotate(-9.5deg);
+          -ms-transform: translate(45.45455px) rotate(-9.5deg);
+              transform: translate(45.45455px) rotate(-9.5deg);
+      left: 170px; }
+      .WidgetTarot-Card.notFlipped:nth-of-type(17):hover {
+        -webkit-transform: translate(55.45455px, -15px) rotate(-9.5deg);
+            -ms-transform: translate(55.45455px, -15px) rotate(-9.5deg);
+                transform: translate(55.45455px, -15px) rotate(-9.5deg);
+        -webkit-filter: drop-shadow(0 0 2px #000);
+                filter: drop-shadow(0 0 2px #000); }
+    .WidgetTarot-Card.notFlipped:nth-of-type(18) {
+      -webkit-transform-origin: 60% 450% 0;
+          -ms-transform-origin: 60% 450% 0;
+              transform-origin: 60% 450% 0;
+      z-index: 81;
+      -webkit-transform: translate(36.36364px) rotate(-11.5deg);
+          -ms-transform: translate(36.36364px) rotate(-11.5deg);
+              transform: translate(36.36364px) rotate(-11.5deg);
+      left: 180px; }
+      .WidgetTarot-Card.notFlipped:nth-of-type(18):hover {
+        -webkit-transform: translate(46.36364px, -15px) rotate(-11.5deg);
+            -ms-transform: translate(46.36364px, -15px) rotate(-11.5deg);
+                transform: translate(46.36364px, -15px) rotate(-11.5deg);
+        -webkit-filter: drop-shadow(0 0 2px #000);
+                filter: drop-shadow(0 0 2px #000); }
+    .WidgetTarot-Card.notFlipped:nth-of-type(19) {
+      -webkit-transform-origin: 60% 450% 0;
+          -ms-transform-origin: 60% 450% 0;
+              transform-origin: 60% 450% 0;
+      z-index: 80;
+      -webkit-transform: translate(27.27273px) rotate(-13.5deg);
+          -ms-transform: translate(27.27273px) rotate(-13.5deg);
+              transform: translate(27.27273px) rotate(-13.5deg);
+      left: 190px; }
+      .WidgetTarot-Card.notFlipped:nth-of-type(19):hover {
+        -webkit-transform: translate(37.27273px, -15px) rotate(-13.5deg);
+            -ms-transform: translate(37.27273px, -15px) rotate(-13.5deg);
+                transform: translate(37.27273px, -15px) rotate(-13.5deg);
+        -webkit-filter: drop-shadow(0 0 2px #000);
+                filter: drop-shadow(0 0 2px #000); }
+    .WidgetTarot-Card.notFlipped:nth-of-type(20) {
+      -webkit-transform-origin: 60% 450% 0;
+          -ms-transform-origin: 60% 450% 0;
+              transform-origin: 60% 450% 0;
+      z-index: 79;
+      -webkit-transform: translate(18.18182px) rotate(-15.5deg);
+          -ms-transform: translate(18.18182px) rotate(-15.5deg);
+              transform: translate(18.18182px) rotate(-15.5deg);
+      left: 200px; }
+      .WidgetTarot-Card.notFlipped:nth-of-type(20):hover {
+        -webkit-transform: translate(28.18182px, -15px) rotate(-15.5deg);
+            -ms-transform: translate(28.18182px, -15px) rotate(-15.5deg);
+                transform: translate(28.18182px, -15px) rotate(-15.5deg);
+        -webkit-filter: drop-shadow(0 0 2px #000);
+                filter: drop-shadow(0 0 2px #000); }
+    .WidgetTarot-Card.notFlipped:nth-of-type(21) {
+      -webkit-transform-origin: 60% 450% 0;
+          -ms-transform-origin: 60% 450% 0;
+              transform-origin: 60% 450% 0;
+      z-index: 78;
+      -webkit-transform: translate(9.09091px) rotate(-17.5deg);
+          -ms-transform: translate(9.09091px) rotate(-17.5deg);
+              transform: translate(9.09091px) rotate(-17.5deg);
+      left: 210px; }
+      .WidgetTarot-Card.notFlipped:nth-of-type(21):hover {
+        -webkit-transform: translate(19.09091px, -15px) rotate(-17.5deg);
+            -ms-transform: translate(19.09091px, -15px) rotate(-17.5deg);
+                transform: translate(19.09091px, -15px) rotate(-17.5deg);
+        -webkit-filter: drop-shadow(0 0 2px #000);
+                filter: drop-shadow(0 0 2px #000); }
+    .WidgetTarot-Card.notFlipped:nth-of-type(22) {
+      -webkit-transform-origin: 60% 450% 0;
+          -ms-transform-origin: 60% 450% 0;
+              transform-origin: 60% 450% 0;
+      z-index: 77;
+      -webkit-transform: translate(0.0px) rotate(-19.5deg);
+          -ms-transform: translate(0.0px) rotate(-19.5deg);
+              transform: translate(0.0px) rotate(-19.5deg);
+      left: 220px; }
+      .WidgetTarot-Card.notFlipped:nth-of-type(22):hover {
+        -webkit-transform: translate(10.0px, -15px) rotate(-19.5deg);
+            -ms-transform: translate(10.0px, -15px) rotate(-19.5deg);
+                transform: translate(10.0px, -15px) rotate(-19.5deg);
+        -webkit-filter: drop-shadow(0 0 2px #000);
+                filter: drop-shadow(0 0 2px #000); }
+    .WidgetTarot-Card.notFlipped:hover {
+      -webkit-filter: drop-shadow(0 0 2px #000);
+              filter: drop-shadow(0 0 2px #000); }
+  .WidgetTarot-Card-Face.front {
+    border: none;
+    background: transparent url("../images/major/backface.png") center no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%; }
+  .WidgetTarot-Card-Face.back {
+    border: none;
+    background-color: transparent; }
+  .WidgetTarot-Card.place {
+    background-color: transparent;
+    background-image: url("../images/major/backface.png");
+    border-radius: 6px;
+    width: calc(247px / 2);
+    height: calc(412px / 2);
+    display: inline-block;
+    background-size: cover;
+    margin: 5px; }
+  .WidgetTarot-ResultMsg {
+    font-weight: bold;
+    color: #8387dd; }
+
+#baraja-el2 {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-43%);
+      -ms-transform: translate(-43%);
+          transform: translate(-43%);
+  top: 142px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.cardSlide {
+  width: 620px;
+  height: 402px;
+  position: relative;
+  top: 50%;
+  margin: 5px auto;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%); }
+.cardInfo {
+  height: 400px;
+  position: absolute;
+  background: rgba(253, 253, 253, 0.22);
+  width: 100%; }
+
+.CardInfoHeader {
+  width: 100%;
+  height: 40px;
+  background: rgba(253, 253, 253, 0.22);
+  position: absolute;
+  top: -45px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 1px 2px rgba(80, 80, 80, 0.2); }
+
+.MetaInfo {
+  height: 400px;
+  width: 218px;
+  position: relative;
+  background: rgba(253, 253, 253, 0.22);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  right: 0;
+  display: inline-block;
+  float: left; }
+  .MetaInfo > footer {
+    background: transparent;
+    border-top: 1px solid rgba(0, 0, 0, 0.22);
+    height: 46px;
+    width: 218px;
+    position: absolute;
+    bottom: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .MetaInfo > footer * {
+      width: 42px;
+      height: 42px; }
+
+.cardImg {
+  height: 340px;
+  display: block;
+  left: 50%;
+  position: absolute;
+  -webkit-transform: translate(-50%);
+      -ms-transform: translate(-50%);
+          transform: translate(-50%);
+  top: 4px;
+  border: 3px solid #fff;
+  border-radius: 3px; }
+
+.paragraph {
+  width: 370px;
+  display: inline-block;
+  float: right;
+  right: 15px;
+  top: 200px;
+  position: relative;
+  -webkit-transform: translateY(-100px);
+      -ms-transform: translateY(-100px);
+          transform: translateY(-100px); }
 
 /*# sourceMappingURL=app.css.map */
