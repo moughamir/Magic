@@ -121,8 +121,7 @@
                     <div class="flex-c2">
                         <div id="scn-tarot">
                             <section class="ContentBand Tarot" id="cards-container">
-                                <header class="ContentBand-ColumnHeader Title">- Tirez <strong>5 cartes</strong> -
-                                </header>
+
                                 <div class="PageWrapper ContentBand-Table">
                                     <div class="ContentBand-Column">
                                         <article class="WidgetTarot">
@@ -153,7 +152,7 @@
                     <section class="cardSlide">
                         <article class="cardInfo">
                             <header class="CardInfoHeader">
-                                <h2>{{card.value}} 1<span class="separator"></span>{{card.name}}</h2>
+                                <h2 class="cardName">9<span class="separator"></span>L'Hermite</h2>
                             </header>
                             <div class="InforContainer">
                                 <div class="article-container">
@@ -181,15 +180,15 @@
                                     </article>
                                 </div>
                                 <aside class="MetaInfo">
-                                    <img src="https://placeholdit.imgix.net/~text?txtsize=120&txt=CARD&w=247&h=412"
-                                         alt="{{card.name}}" class="cardImg">
+                                    <img src="http://myastro.dev/tarot-g/app/images/major/9.png"
+                                         alt="L'Hermite" class="cardImg">
                                     <footer>
                                         <div class="zodiac"><img
-                                                src="https://placeholdit.imgix.net/~text?txtsize=60&txt=Zodiac&w=168&h=168"
-                                                alt=""></div>
+                                                src="app/images/icons/zodiac/vigro.png"
+                                                alt="Virgo"></div>
                                         <div class="TheElement"><img
-                                                src="https://placeholdit.imgix.net/~text?txtsize=50&txt=Element&w=168&h=168"
-                                                alt=""></div>
+                                                src="app/images/icons/elements/earth.png"
+                                                alt="Earth"></div>
                                     </footer>
                                 </aside>
                             </div>
@@ -197,27 +196,43 @@
                         </article>
                         <article class="cardInfo">
                             <header class="CardInfoHeader">
-                                <h2>{{card.value}} 1<span class="separator"></span>{{card.name}}</h2>
+                                <h2 class="cardName">11<span class="separator"></span>La Force</h2>
                             </header>
                             <div class="InforContainer">
                                 <div class="article-container">
-                                    <article class="paragraph">{{card.reading}}Lorem ipsum dolor sit amet, consectetur
-                                        adipisicing elit. A
-                                        commodi culpa dignissimos, enim est eveniet fugiat harum ipsum magnam mollitia
-                                        natus
-                                        odio, pariatur quae qui rerum tempore temporibus vel velit.
+                                    <article class="paragraph">
+                                        <h3 class="position">Upright:</h3>
+                                        <p class="parag">Introspection. Spirituality. Looking objectively at the world
+                                            around.Learning for the sake of learning.
+                                            Stepping back from the fast pace of life for a while to take stock of where
+                                            you are.
+                                            It may be time to consider the lessons of the past. Increasing knowledge for
+                                            the sake of doing so.
+                                            A need for space and time alone.
+                                            Possibly a wise confidant or tutor.
+                                            A beacon of knowledge. Traditionally, wisdom, reserve, meditation,
+                                            secrecy.</p>
+                                        <h3 class="position">Reversed:</h3>
+                                        <p class="parag">Antisocial. Withdrawn. Senile. Lost in the dark. Possibly a
+                                            victim of betrayal.
+                                            Perhaps fears of growing old or being alone. This could be a warning to
+                                            think more objectively.
+                                            Also, beware of false or ignorant teachings. Traditionally, reclusiveness,
+                                            isolation, lonliness.
+                                            Be conscious of diseases related to aging, such as arthritis or hearing
+                                            loss.</p>
                                     </article>
                                 </div>
                                 <aside class="MetaInfo">
-                                    <img src="https://placeholdit.imgix.net/~text?txtsize=120&txt=CARD&w=247&h=412"
-                                         alt="{{card.name}}" class="cardImg">
+                                    <img src="http://myastro.dev/tarot-g/app/images/major/11.png"
+                                         alt="La Force" class="cardImg">
                                     <footer>
                                         <div class="zodiac"><img
-                                                src="https://placeholdit.imgix.net/~text?txtsize=60&txt=Zodiac&w=168&h=168"
-                                                alt=""></div>
+                                                src="app/images/icons/zodiac/libra.png"
+                                                alt="Virgo"></div>
                                         <div class="TheElement"><img
-                                                src="https://placeholdit.imgix.net/~text?txtsize=50&txt=Element&w=168&h=168"
-                                                alt=""></div>
+                                                src="app/images/icons/elements/air.png"
+                                                alt="Earth"></div>
                                     </footer>
                                 </aside>
                             </div>
@@ -225,27 +240,37 @@
                         </article>
                         <article class="cardInfo">
                             <header class="CardInfoHeader">
-                                <h2>{{card.value}} 1<span class="separator"></span>{{card.name}}</h2>
+                                <h2 class="cardName">2<span class="separator"></span>La Papesse</h2>
                             </header>
                             <div class="InforContainer">
                                 <div class="article-container">
-                                    <article class="paragraph">{{card.reading}}Lorem ipsum dolor sit amet, consectetur
-                                        adipisicing elit. A
-                                        commodi culpa dignissimos, enim est eveniet fugiat harum ipsum magnam mollitia
-                                        natus
-                                        odio, pariatur quae qui rerum tempore temporibus vel velit.
+                                    <article class="paragraph">{{card.reading}}<h3 class="postion">Upright:</h3>
+                                        <p class="parag">Surprising and unexpected revelations may by coming. The High
+                                            Priestess card represents illumination, knowledge and truth. She is
+                                            eminently feminine, mysterious, secretive and intuitive. Moody and aloof.
+                                            Knowing all, but expressing her secrets by measure, or through symbolism.
+                                            Yet she is a powerful advisor. A well of knowledge, but only a cup at a time
+                                            is dispensed. This card may often represent the subject, if female, or the
+                                            object of the subject's desire, if male. Also, perhaps a suggestion for
+                                            introspection or meditation. Traditionally, she represents knowledge,
+                                            modesty and discretion.</p>
+                                        <h3 class="postion">Reversed:</h3>
+                                        <p class="parag">Passion. Indiscretion. Immodesty. Promiscuity. Seduction.
+                                            Betrayal. Revealing secrets to cause embarassment and hurt, rather than to
+                                            share knowledge. Selfishness or shallowness. The High Priestess card
+                                            reversed may also be a warning to pay heed to feminine health issues.</p>
                                     </article>
                                 </div>
                                 <aside class="MetaInfo">
-                                    <img src="https://placeholdit.imgix.net/~text?txtsize=120&txt=CARD&w=247&h=412"
-                                         alt="{{card.name}}" class="cardImg">
+                                    <img src="http://myastro.dev/tarot-g/app/images/major/2.png"
+                                         alt="La Papesse" class="cardImg">
                                     <footer>
                                         <div class="zodiac"><img
-                                                src="https://placeholdit.imgix.net/~text?txtsize=60&txt=Zodiac&w=168&h=168"
-                                                alt=""></div>
+                                                src="app/images/icons/zodiac/cancer.png"
+                                                alt="Virgo"></div>
                                         <div class="TheElement"><img
-                                                src="https://placeholdit.imgix.net/~text?txtsize=50&txt=Element&w=168&h=168"
-                                                alt=""></div>
+                                                src="app/images/icons/elements/water.png"
+                                                alt="Earth"></div>
                                     </footer>
                                 </aside>
                             </div>

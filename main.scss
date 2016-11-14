@@ -824,12 +824,21 @@ $place_carte: "../images/major/backface.png";
 }
 
 .card {
+  &Name {
+    height: 100%;
+    line-height: 40px;
+    font-family: "Lobster Two", Cursive;
+    font-size: 1.6em;
+    color: #000000;
+    text-shadow: 0 0 1px #f2f2f2;
+    padding: 0 15px;
+  }
   &Slide {
     width: 620px;
     height: 450px;
     position: relative;
     //top: 50%;
-    margin: 5px auto;
+    //margin: 5px auto;
     //transform: translateY(-50%);
 
   }
@@ -838,9 +847,10 @@ $place_carte: "../images/major/backface.png";
     position: absolute;
     background: rgba(253, 253, 253, 0.22);
     width: 100%;
-    &:not(:first-of-type) {
+    display: none;
+    /*&:not(:first-of-type) {
       display: none;
-  }
+  }*/
     &Nav {
       bottom: 45px;
       position: absolute;
@@ -863,6 +873,15 @@ $place_carte: "../images/major/backface.png";
   box-shadow: 0 1px 2px rgba(80, 80, 80, 0.2);
 }
 
+.separator {
+  display: inline-block;
+  margin: 0 15px;
+  &:before {
+    content: "-";
+    color: rgba(0, 0, 0, 0.36);
+    font-weight: 900;
+  }
+}
 .MetaInfo {
   height: 400px;
   width: 218px;
@@ -884,8 +903,7 @@ $place_carte: "../images/major/backface.png";
     justify-content: space-around;
     align-items: center;
     & * {
-      width: 42px;
-      height: 42px;
+      height: 32px;
     }
   }
 }
@@ -910,6 +928,20 @@ $place_carte: "../images/major/backface.png";
   display: inline-block;
   float: right;
   top: 50px;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 6px;
+    background-color: rgba(0, 0, 0, 0);
+    &-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.22);
+      background-color: rgba(137, 134, 132, 0);
+    }
+    &-thumb {
+      border-radius: 5px;
+      box-shadow: 0 0 1px rgba(66, 66, 66, 0.63);
+      background-color: rgb(145, 145, 145);
+    }
+  }
 }
 
 .paragraph {

@@ -3276,18 +3276,27 @@ img.titre-mini {
       -ms-flex-align: center;
           align-items: center; }
 
+.cardName {
+  height: 100%;
+  line-height: 40px;
+  font-family: "Lobster Two", Cursive;
+  font-size: 1.6em;
+  color: #000000;
+  text-shadow: 0 0 1px #f2f2f2;
+  padding: 0 15px; }
 .cardSlide {
   width: 620px;
   height: 450px;
-  position: relative;
-  margin: 5px auto; }
+  position: relative; }
 .cardInfo {
   height: 450px;
   position: absolute;
   background: rgba(253, 253, 253, 0.22);
-  width: 100%; }
-  .cardInfo:not(:first-of-type) {
-    display: none; }
+  width: 100%;
+  display: none
+  /*&:not(:first-of-type) {
+    display: none;
+}*/ }
   .cardInfoNav {
     bottom: 45px;
     position: absolute; }
@@ -3304,6 +3313,14 @@ img.titre-mini {
   top: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 1px 2px rgba(80, 80, 80, 0.2); }
+
+.separator {
+  display: inline-block;
+  margin: 0 15px; }
+  .separator:before {
+    content: "-";
+    color: rgba(0, 0, 0, 0.36);
+    font-weight: 900; }
 
 .MetaInfo {
   height: 400px;
@@ -3334,8 +3351,7 @@ img.titre-mini {
         -ms-flex-align: center;
             align-items: center; }
     .MetaInfo > footer * {
-      width: 42px;
-      height: 42px; }
+      height: 32px; }
 
 .cardImg {
   height: 340px;
@@ -3357,7 +3373,18 @@ img.titre-mini {
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
   display: inline-block;
   float: right;
-  top: 50px; }
+  top: 50px;
+  overflow-y: scroll; }
+  .article-container::-webkit-scrollbar {
+    width: 6px;
+    background-color: transparent; }
+    .article-container::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.22);
+      background-color: rgba(137, 134, 132, 0); }
+    .article-container::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      box-shadow: 0 0 1px rgba(66, 66, 66, 0.63);
+      background-color: #919191; }
 
 .paragraph {
   padding: 15px 7px;

@@ -132,128 +132,88 @@ $(document).ready(function() {
      * @since 0.1.0
      */
 
+    /**
+     * Created by Moughamir on 14/11/2016.
+     */
 
-//jQuery time
-    /*    var current_fs, next_fs; //fieldsets
-    var left, opacity, scale; //fieldset properties which we will animate
-    var animating; //flag to prevent quick multi-click glitches
+    var $slider = $('.cardSlide'); // class or id of carousel slider
+    var $slide = $('.cardInfo');
+    var $transition_time = 800; // 1 second
+    var $time_between_slides = 14000; // 4 seconds
+    var counter = 0;
 
-    $(".next").click(function(){
-        if(animating) return false;
-        animating = true;
+    function slides() {
+        return $slider.find($slide);
+    }
 
-        current_fs = $(this).parent();
-        next_fs = $(this).parent().next();
+    slides().fadeOut();
 
-        //show the next fieldset
-        next_fs.show();
-        //hide the current fieldset with style
-        current_fs.animate({opacity: 0}, {
-            step: function(now, mx) {
-                //as the opacity of current_fs reduces to 0 - stored in "now"
-                //1. scale current_fs down to 80%
-                scale = 1 - (1 - now) * 0.2;
-                //2. bring next_fs from the right(50%)
-                left = (now * 50)+"%";
-                //3. increase opacity of next_fs to 1 as it moves in
-                opacity = 1 - now;
-                current_fs.css({
-                    'transform': 'scale('+scale+')',
-                    'position': 'absolute'
-                });
-                next_fs.css({'left': left, 'opacity': opacity});
-            },
-            duration: 800,
-            complete: function(){
-                current_fs.hide();
-                animating = false;
-            },
-            //this comes from the custom easing plugin
-            easing: 'easeInOutBack'
-        });
+// set active classes
+    slides().first().addClass('active');
+    slides().first().fadeIn($transition_time);
+
+// auto scroll
+    $interval = setInterval(
+        function () {
+            var $i = $slider.find('.active').index();
+
+            slides().eq($i).removeClass('active');
+            slides().eq($i).fadeOut($transition_time);
+
+            if (slides().length == $i + 1) $i = -1; // loop to start
+
+            slides().eq($i + 1).fadeIn($transition_time);
+            slides().eq($i + 1).addClass('active');
+        }
+        , $transition_time + $time_between_slides
+    );
+
+
+    //when user clicks the image for sliding right
+    $('.previous').click(function () {
+        var $i = $slider.find('.active').index();
+
+        slides().eq($i).removeClass('active');
+        slides().eq($i).fadeOut($transition_time);
+
+
+        slides().eq($i - 1).fadeIn($transition_time);
+        slides().eq($i - 1).addClass('active');
     });
 
-    $(".submit").click(function(){
-        return false;
-     });*/
+    //when user clicks the image for sliding left
+    $('.next').click(function () {
+        var $i = $slider.find('.active').index();
+
+        slides().eq($i).removeClass('active');
+        slides().eq($i).fadeOut($transition_time);
 
 
-    var current_fs, next_fs, previous_fs;
-    var left, opacity, scale;
-    var animating;
-    $(".next").click(function () {
-        if (animating) return false;
-        animating = true;
+        slides().eq($i + 1).fadeIn($transition_time);
+        slides().eq($i + 1).addClass('active');
 
-        current_fs = $(this).parent();
-        next_fs = $(this).parent().next();
-
-        //activate next step on progressbar using the index of next_fs
-        $("#progressbar li").eq($(".cardInfo").index(next_fs)).addClass("active");
-
-
-        //show the next fieldset
-        next_fs.show();
-        //hide the current fieldset with style
-        current_fs.animate({opacity: 0}, {
-            step: function (now, mx) {
-                //as the opacity of current_fs reduces to 0 - stored in "now"
-                //1. scale current_fs down to 80%
-                scale = 1 - (1 - now) * 0.2;
-                //2. bring next_fs from the right(50%)
-                left = (now * 50) + "%";
-                //3. increase opacity of next_fs to 1 as it moves in
-                opacity = 1 - now;
-                current_fs.css({
-                    'transform': 'scale(' + scale + ')',
-                    'position': 'absolute'
-                });
-                next_fs.css({'left': left, 'opacity': opacity});
-            },
-            duration: 800,
-            complete: function () {
-                current_fs.hide();
-                animating = false;
-            },
-            //this comes from the custom easing plugin
-            easing: 'easeInOutBack'
-        });
     });
-    $(".previous").click(function () {
-        if (animating) return false;
-        animating = true;
-
-        current_fs = $(this).parent();
-        previous_fs = $(this).parent().prev();
-
-        //de-activate current step on progressbar
-        $("#progressbar li").eq($(".cardInfo").index(current_fs)).removeClass("active");
-
-        //show the previous fieldset
-        previous_fs.show();
-        //hide the current fieldset with style
-        current_fs.animate({opacity: 0}, {
-            step: function (now, mx) {
-                //as the opacity of current_fs reduces to 0 - stored in "now"
-                //1. scale previous_fs from 80% to 100%
-                scale = 0.8 + (1 - now) * 0.2;
-                //2. take current_fs to the right(50%) - from 0%
-                left = ((1 - now) * 50) + "%";
-                //3. increase opacity of previous_fs to 1 as it moves in
-                opacity = 1 - now;
-                current_fs.css({'left': left});
-                previous_fs.css({'transform': 'scale(' + scale + ')', 'opacity': opacity});
-            },
-            duration: 800,
-            complete: function () {
-                current_fs.hide();
-                animating = false;
-            },
-            //this comes from the custom easing plugin
-            easing: 'easeInOutBack'
-        });
-    });
-
+    $(".next").bind("click", function () {
+        counter++;
+        switch (counter) {
+            case 1:
+                console.log('1');
+                break;
+            case 2:
+                console.log('2');
+                break;
+            case 3:
+                console.log('3');
+                break;
+            case 4:
+                $('#draw').removeClass('moveFromTopFade').addClass('moveToTopFade');
+                $('#result').removeClass('hidden').addClass('moveFromBottomFade');
+                $('.parallax-tarot').animate({
+                    backgroundPosition: '0 0'
+                }, 700, 'swing');
+                break;
+        }
+    })
 
 
 
