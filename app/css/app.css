@@ -1874,7 +1874,10 @@ h1 {
 
 #draw {
   z-index: 96;
-  isplay: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
@@ -3275,25 +3278,30 @@ img.titre-mini {
 
 .cardSlide {
   width: 620px;
-  height: 402px;
+  height: 450px;
   position: relative;
-  top: 50%;
-  margin: 5px auto;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%); }
+  margin: 5px auto; }
 .cardInfo {
-  height: 400px;
+  height: 450px;
   position: absolute;
   background: rgba(253, 253, 253, 0.22);
   width: 100%; }
+  .cardInfo:not(:first-of-type) {
+    display: none; }
+  .cardInfoNav {
+    bottom: 45px;
+    position: absolute; }
+
+.InforContainer {
+  position: relative;
+  height: 100%; }
 
 .CardInfoHeader {
   width: 100%;
   height: 40px;
   background: rgba(253, 253, 253, 0.22);
   position: absolute;
-  top: -45px;
+  top: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 1px 2px rgba(80, 80, 80, 0.2); }
 
@@ -3305,7 +3313,8 @@ img.titre-mini {
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
   right: 0;
   display: inline-block;
-  float: left; }
+  float: left;
+  top: 50px; }
   .MetaInfo > footer {
     background: transparent;
     border-top: 1px solid rgba(0, 0, 0, 0.22);
@@ -3340,15 +3349,72 @@ img.titre-mini {
   border: 3px solid #fff;
   border-radius: 3px; }
 
-.paragraph {
-  width: 370px;
+.article-container {
+  height: 400px;
+  width: 395px;
+  position: relative;
+  background: rgba(253, 253, 253, 0.22);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
   display: inline-block;
   float: right;
-  right: 15px;
-  top: 200px;
+  top: 50px; }
+
+.paragraph {
+  padding: 15px 7px;
+  color: #000;
+  font-family: "Oxygen", sans-serif;
+  font-size: 1em;
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.9);
+  line-height: 1.2;
+  text-align: justify; }
+  .paragraph h3 {
+    font-family: "Lobster Two", Cursive;
+    font-size: 22px;
+    line-height: 1.8; }
+
+.navigator {
+  width: 620px;
   position: relative;
-  -webkit-transform: translateY(-100px);
-      -ms-transform: translateY(-100px);
-          transform: translateY(-100px); }
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .navigator li {
+    display: inline-block; }
+
+.action-button {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 112px;
+  height: 32px;
+  font-size: 14px;
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 32px;
+  border: 0 none;
+  border-radius: 5px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0 5px;
+  margin: 5px; }
+  .action-button:hover {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5); }
 
 /*# sourceMappingURL=app.css.map */

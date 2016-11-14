@@ -153,14 +153,33 @@
                     <section class="cardSlide">
                         <article class="cardInfo">
                             <header class="CardInfoHeader">
-                                <h2>{{card.value}}<span class="separator"></span>{{card.name}}</h2>
+                                <h2>{{card.value}} 1<span class="separator"></span>{{card.name}}</h2>
                             </header>
                             <div class="InforContainer">
-                                <article class="paragraph">{{card.reading}}Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. A
-                                    commodi culpa dignissimos, enim est eveniet fugiat harum ipsum magnam mollitia natus
-                                    odio, pariatur quae qui rerum tempore temporibus vel velit.
-                                </article>
+                                <div class="article-container">
+                                    <article class="paragraph">{{card.reading}}
+                                        <h3 class="position">Upright:</h3>
+                                        <p class="parag">Introspection. Spirituality. Looking objectively at the world
+                                            around.Learning for the sake of learning.
+                                            Stepping back from the fast pace of life for a while to take stock of where
+                                            you are.
+                                            It may be time to consider the lessons of the past. Increasing knowledge for
+                                            the sake of doing so.
+                                            A need for space and time alone.
+                                            Possibly a wise confidant or tutor.
+                                            A beacon of knowledge. Traditionally, wisdom, reserve, meditation,
+                                            secrecy.</p>
+                                        <h3 class="position">Reversed:</h3>
+                                        <p class="parag">Antisocial. Withdrawn. Senile. Lost in the dark. Possibly a
+                                            victim of betrayal.
+                                            Perhaps fears of growing old or being alone. This could be a warning to
+                                            think more objectively.
+                                            Also, beware of false or ignorant teachings. Traditionally, reclusiveness,
+                                            isolation, lonliness.
+                                            Be conscious of diseases related to aging, such as arthritis or hearing
+                                            loss.</p>
+                                    </article>
+                                </div>
                                 <aside class="MetaInfo">
                                     <img src="https://placeholdit.imgix.net/~text?txtsize=120&txt=CARD&w=247&h=412"
                                          alt="{{card.name}}" class="cardImg">
@@ -176,9 +195,73 @@
                             </div>
 
                         </article>
+                        <article class="cardInfo">
+                            <header class="CardInfoHeader">
+                                <h2>{{card.value}} 1<span class="separator"></span>{{card.name}}</h2>
+                            </header>
+                            <div class="InforContainer">
+                                <div class="article-container">
+                                    <article class="paragraph">{{card.reading}}Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. A
+                                        commodi culpa dignissimos, enim est eveniet fugiat harum ipsum magnam mollitia
+                                        natus
+                                        odio, pariatur quae qui rerum tempore temporibus vel velit.
+                                    </article>
+                                </div>
+                                <aside class="MetaInfo">
+                                    <img src="https://placeholdit.imgix.net/~text?txtsize=120&txt=CARD&w=247&h=412"
+                                         alt="{{card.name}}" class="cardImg">
+                                    <footer>
+                                        <div class="zodiac"><img
+                                                src="https://placeholdit.imgix.net/~text?txtsize=60&txt=Zodiac&w=168&h=168"
+                                                alt=""></div>
+                                        <div class="TheElement"><img
+                                                src="https://placeholdit.imgix.net/~text?txtsize=50&txt=Element&w=168&h=168"
+                                                alt=""></div>
+                                    </footer>
+                                </aside>
+                            </div>
 
+                        </article>
+                        <article class="cardInfo">
+                            <header class="CardInfoHeader">
+                                <h2>{{card.value}} 1<span class="separator"></span>{{card.name}}</h2>
+                            </header>
+                            <div class="InforContainer">
+                                <div class="article-container">
+                                    <article class="paragraph">{{card.reading}}Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. A
+                                        commodi culpa dignissimos, enim est eveniet fugiat harum ipsum magnam mollitia
+                                        natus
+                                        odio, pariatur quae qui rerum tempore temporibus vel velit.
+                                    </article>
+                                </div>
+                                <aside class="MetaInfo">
+                                    <img src="https://placeholdit.imgix.net/~text?txtsize=120&txt=CARD&w=247&h=412"
+                                         alt="{{card.name}}" class="cardImg">
+                                    <footer>
+                                        <div class="zodiac"><img
+                                                src="https://placeholdit.imgix.net/~text?txtsize=60&txt=Zodiac&w=168&h=168"
+                                                alt=""></div>
+                                        <div class="TheElement"><img
+                                                src="https://placeholdit.imgix.net/~text?txtsize=50&txt=Element&w=168&h=168"
+                                                alt=""></div>
+                                    </footer>
+                                </aside>
+                            </div>
 
+                        </article>
                     </section>
+                    <nav class="cardInfoNav">
+                        <ul class="navigator">
+                            <li class="previous"><a class="btn action-button"><i class="fa fa-chevron-left"
+                                                                                 aria-hidden="true"></i>Carte précédente</a>
+                            </li>
+                            <li class="next"><a class="btn action-button">Carte suivante<i class="fa fa-chevron-right"
+                                                                                           aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </nav>
                 </section>
                 <section id="interpret" class="hidden slide step">
                     <!-- Modal Test-->
@@ -479,6 +562,7 @@
 
         });
     </script-->
+
 </body>
 
 </html>
